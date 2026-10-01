@@ -97,5 +97,5 @@ export function VisuallyHidden(props: VisuallyHiddenProps): JSX.Element {
   let {children, elementType: Element = 'div', isFocusable, style, ...otherProps} = props;
   let {visuallyHiddenProps} = useVisuallyHidden(props);
 
-  return <Element {...mergeProps(otherProps, visuallyHiddenProps)}>{children}</Element>;
+  return React.createElement(Element, mergeProps(otherProps, visuallyHiddenProps), children);
 }

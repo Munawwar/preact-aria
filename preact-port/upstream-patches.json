@@ -1,0 +1,76 @@
+{
+  "upstream": "57c56b8",
+  "baseline": "57c56b8cbfa65294fbaed528ab9580ade0d339cb",
+  "unchanged": [
+    "packages/react-stately",
+    "packages/@react-types/shared",
+    "packages/react-aria/src/utils"
+  ],
+  "patches": [
+    {
+      "path": "packages/react-aria-components/exports/index.ts",
+      "kind": "entry",
+      "reason": "Allow native Preact SSR without the client-only marker package."
+    },
+    {
+      "path": "packages/react-aria-components/src/Slider.tsx",
+      "kind": "types",
+      "reason": "Avoid duplicate native and shared global event declarations."
+    },
+    {
+      "path": "packages/react-aria-components/src/Toast.tsx",
+      "kind": "types",
+      "reason": "Narrow a render function from Preact ComponentChildren, which includes object."
+    },
+    {
+      "path": "packages/react-aria-components/src/utils.tsx",
+      "kind": "types",
+      "reason": "Use createElement for a dynamic intrinsic tag to avoid intersecting all intrinsic prop types."
+    },
+    {
+      "path": "packages/react-aria/src/collections/Document.ts",
+      "kind": "runtime",
+      "reason": "Implement childNodes, remove and createElementNS needed by Preact portals."
+    },
+    {
+      "path": "packages/react-aria/src/dnd/useDrag.ts",
+      "kind": "runtime",
+      "reason": "Use boolean native draggable properties."
+    },
+    {
+      "path": "packages/react-aria/src/interactions/Pressable.tsx",
+      "kind": "runtime",
+      "reason": "Read intrinsic refs from the VNode and function component refs from props."
+    },
+    {
+      "path": "packages/react-aria/src/interactions/createEventHandler.ts",
+      "kind": "runtime",
+      "reason": "Preserve inherited native event fields and bind native methods when wrapping events."
+    },
+    {
+      "path": "packages/react-aria/src/interactions/useFocusable.tsx",
+      "kind": "runtime",
+      "reason": "Read intrinsic refs from the VNode and function component refs from props."
+    },
+    {
+      "path": "packages/react-aria/src/interactions/usePress.ts",
+      "kind": "types",
+      "reason": "Preserve a non-null local target through touch event calls."
+    },
+    {
+      "path": "packages/react-aria/src/ssr/SSRProvider.tsx",
+      "kind": "runtime",
+      "reason": "Use native Preact IDs and hydration detection instead of React legacy fiber state."
+    },
+    {
+      "path": "packages/react-aria/src/tokenfield/useTokenField.ts",
+      "kind": "types",
+      "reason": "Import the adapter namespace instead of relying on the Preact compat global React namespace."
+    },
+    {
+      "path": "packages/react-aria/src/visually-hidden/VisuallyHidden.tsx",
+      "kind": "types",
+      "reason": "Use createElement for a dynamic intrinsic tag to avoid intersecting all intrinsic prop types."
+    }
+  ]
+}

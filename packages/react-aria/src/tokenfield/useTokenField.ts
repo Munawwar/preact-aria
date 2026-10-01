@@ -10,6 +10,7 @@
  * governing
  */
 
+import type React from 'react';
 import {announce} from '../live-announcer/LiveAnnouncer';
 import {AriaLabelingProps, DOMAttributes, FocusableProps} from '@react-types/shared';
 import {

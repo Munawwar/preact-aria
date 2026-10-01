@@ -222,6 +222,16 @@ export class BaseNode<T> {
   addEventListener(): void {}
   removeEventListener(): void {}
 
+  // Preact 11 reads childNodes when entering a portal and removes nodes using
+  // ChildNode.remove(). Keep these operations on the collection document.
+  get childNodes(): ElementNode<T>[] {
+    return [...this];
+  }
+
+  remove(): void {
+    this.parentNode?.removeChild(this as unknown as ElementNode<T>);
+  }
+
   get previousVisibleSibling(): ElementNode<T> | null {
     let node = this.previousSibling;
     while (node && node.isHidden) {
@@ -452,6 +462,10 @@ export class Document<T, C extends BaseCollection<T> = BaseCollection<T>> extend
 
   createElement(type: string): ElementNode<T> {
     return new ElementNode(type, this);
+  }
+
+  createElementNS(_namespace: string, type: string): ElementNode<T> {
+    return this.createElement(type);
   }
 
   private getMutableCollection() {

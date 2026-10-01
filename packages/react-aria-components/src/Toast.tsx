@@ -144,7 +144,7 @@ const ToastRegion = /*#__PURE__*/ (forwardRef as forwardRefType)(function ToastR
             render={undefined}
             className={undefined}
             style={{display: 'contents'}}>
-            {props.children}
+            {props.children as (renderProps: {toast: QueuedToast<T>}) => ReactElement}
           </ToastList>
         ) : (
           props.children

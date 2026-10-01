@@ -414,7 +414,7 @@ export function useDrag(options: DragOptions): DragResult {
   if (isDisabled) {
     return {
       dragProps: {
-        draggable: 'false'
+        draggable: false
       },
       dragButtonProps: {},
       isDragging: false
@@ -424,7 +424,7 @@ export function useDrag(options: DragOptions): DragResult {
   return {
     dragProps: {
       ...interactions,
-      draggable: 'true',
+      draggable: true,
       onDragStart,
       onDrag,
       onDragEnd

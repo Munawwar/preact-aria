@@ -12,7 +12,7 @@
 
 // Mark as a client only package. This will cause a build time error if you try
 // to import it from a React Server Component in a framework like Next.js.
-import 'client-only';
+'use client';
 
 export {
   Autocomplete,

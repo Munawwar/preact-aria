@@ -1,4 +1,10 @@
-#  [React Spectrum Libraries](https://react-spectrum.adobe.com/)
+# Preact Aria
+
+[**Try the live examples →**](https://munawwar.github.io/preact-aria/) · [Showcase](https://munawwar.github.io/preact-aria/?example=tabs&view=showcase) · [Install and development guide](./preact-port/README.md)
+
+WARNING: This is a slopfork of React Aria, it hasn't been tested yet.
+
+##  [React Spectrum Libraries](https://react-spectrum.adobe.com/)
 
 A collection of libraries and tools that help you build adaptive, accessible, and robust user experiences.
 

@@ -157,7 +157,10 @@ export interface SliderOutputProps
 }
 interface SliderOutputContextValue
   extends
-    Omit<OutputHTMLAttributes<HTMLOutputElement>, 'children' | 'className' | 'style'>,
+    Omit<
+      OutputHTMLAttributes<HTMLOutputElement>,
+      'children' | 'className' | 'style' | keyof GlobalDOMAttributes
+    >,
     SliderOutputProps {}
 
 /**
@@ -216,7 +219,10 @@ export interface SliderTrackProps
 }
 interface SliderTrackContextValue
   extends
-    Omit<HTMLAttributes<HTMLDivElement>, 'children' | 'className' | 'style'>,
+    Omit<
+      HTMLAttributes<HTMLDivElement>,
+      'children' | 'className' | 'style' | keyof GlobalDOMAttributes
+    >,
     SliderTrackProps {}
 
 /**
