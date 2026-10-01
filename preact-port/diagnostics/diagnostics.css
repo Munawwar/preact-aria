@@ -1,0 +1,15 @@
+body {
+  font: 16px/1.5 system-ui;
+  padding: 32px;
+}
+.react-aria-DateInput,
+.react-aria-ListBox {
+  display: flex;
+  gap: 8px;
+}
+.react-aria-ListBox {
+  flex-direction: column;
+}
+.react-aria-DateSegment {
+  padding: 2px;
+}

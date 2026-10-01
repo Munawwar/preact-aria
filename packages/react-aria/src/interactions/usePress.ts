@@ -822,15 +822,16 @@ export function usePress(props: PressHookProps): PressResult {
         state.ignoreEmulatedMouseEvents = true;
         state.isOverTarget = true;
         state.isPressed = true;
-        state.target = e.currentTarget;
+        let target = e.currentTarget as FocusableElement;
+        state.target = target;
         state.pointerType = 'touch';
 
         if (!allowTextSelectionOnPress) {
-          disableTextSelection(state.target);
+          disableTextSelection(target);
         }
 
         let shouldStopPropagation = triggerPressStart(
-          createTouchEvent(state.target, e),
+          createTouchEvent(target, e),
           state.pointerType
         );
         if (shouldStopPropagation) {

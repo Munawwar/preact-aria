@@ -1,0 +1,7 @@
+/* Match Adobe's docs setup: utility styles without a global preflight reset. */
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities) source(none);
+@source './generated/tailwind/src';
+@source './generated/gallery';
+@plugin 'tailwindcss-react-aria-components';
+@import 'tw-animate-css';

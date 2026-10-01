@@ -1,0 +1,20 @@
+[
+  {
+    "path": "gallery/plants/PlantDialog.tsx",
+    "reason": "Preact 11 does not implement React 19 function-valued form actions. Use native submission and pass the same FormData to the original save body.",
+    "before": "action={formData => {",
+    "after": "onSubmit={event => {\n              event.preventDefault();\n              let formData = new FormData(event.currentTarget);"
+  },
+  {
+    "path": "vanilla/src/CommandPalette.tsx",
+    "reason": "The upstream CommandPalette story omits controlled props. Read the surrounding DialogTrigger state so its advertised keyboard shortcut and Escape work in the standalone story.",
+    "before": "import {useEffect} from 'react';",
+    "after": "import {useEffect, useContext} from 'react';\nimport {OverlayTriggerStateContext} from 'react-aria-components';"
+  },
+  {
+    "path": "vanilla/src/CommandPalette.tsx",
+    "reason": "The upstream CommandPalette story omits controlled props. Read the surrounding DialogTrigger state so its advertised keyboard shortcut and Escape work in the standalone story.",
+    "before": "let {isOpen, onOpenChange} = props;",
+    "after": "let triggerState = useContext(OverlayTriggerStateContext);\n  let isOpen = props.isOpen ?? triggerState?.isOpen;\n  let onOpenChange = props.onOpenChange ?? triggerState?.setOpen;"
+  }
+]

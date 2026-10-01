@@ -1,0 +1,1458 @@
+{
+  "date": "2026-10-01",
+  "upstream": "adobe/react-spectrum@57c56b8",
+  "preact": "11.0.0",
+  "componentImplementation": "dist/index.js",
+  "upstreamSource": {
+    "upstream": "57c56b8",
+    "baseline": "57c56b8cbfa65294fbaed528ab9580ade0d339cb",
+    "unchanged": [
+      "packages/react-stately",
+      "packages/@react-types/shared",
+      "packages/react-aria/src/utils"
+    ],
+    "patches": [
+      {
+        "path": "packages/react-aria-components/exports/index.ts",
+        "kind": "entry",
+        "reason": "Allow native Preact SSR without the client-only marker package."
+      },
+      {
+        "path": "packages/react-aria-components/src/Slider.tsx",
+        "kind": "types",
+        "reason": "Avoid duplicate native and shared global event declarations."
+      },
+      {
+        "path": "packages/react-aria-components/src/Toast.tsx",
+        "kind": "types",
+        "reason": "Narrow a render function from Preact ComponentChildren, which includes object."
+      },
+      {
+        "path": "packages/react-aria-components/src/utils.tsx",
+        "kind": "types",
+        "reason": "Use createElement for a dynamic intrinsic tag to avoid intersecting all intrinsic prop types."
+      },
+      {
+        "path": "packages/react-aria/src/collections/Document.ts",
+        "kind": "runtime",
+        "reason": "Implement childNodes, remove and createElementNS needed by Preact portals."
+      },
+      {
+        "path": "packages/react-aria/src/dnd/useDrag.ts",
+        "kind": "runtime",
+        "reason": "Use boolean native draggable properties."
+      },
+      {
+        "path": "packages/react-aria/src/interactions/Pressable.tsx",
+        "kind": "runtime",
+        "reason": "Read intrinsic refs from the VNode and function component refs from props."
+      },
+      {
+        "path": "packages/react-aria/src/interactions/createEventHandler.ts",
+        "kind": "runtime",
+        "reason": "Preserve inherited native event fields and bind native methods when wrapping events."
+      },
+      {
+        "path": "packages/react-aria/src/interactions/useFocusable.tsx",
+        "kind": "runtime",
+        "reason": "Read intrinsic refs from the VNode and function component refs from props."
+      },
+      {
+        "path": "packages/react-aria/src/interactions/usePress.ts",
+        "kind": "types",
+        "reason": "Preserve a non-null local target through touch event calls."
+      },
+      {
+        "path": "packages/react-aria/src/ssr/SSRProvider.tsx",
+        "kind": "runtime",
+        "reason": "Use native Preact IDs and hydration detection instead of React legacy fiber state."
+      },
+      {
+        "path": "packages/react-aria/src/tokenfield/useTokenField.ts",
+        "kind": "types",
+        "reason": "Import the adapter namespace instead of relying on the Preact compat global React namespace."
+      },
+      {
+        "path": "packages/react-aria/src/visually-hidden/VisuallyHidden.tsx",
+        "kind": "types",
+        "reason": "Use createElement for a dynamic intrinsic tag to avoid intersecting all intrinsic prop types."
+      }
+    ],
+    "patchedFiles": 13,
+    "runtimeAdapter": "compat/react.mjs",
+    "typeAdapters": [
+      "compat/react.d.ts",
+      "compat/types.d.ts"
+    ]
+  },
+  "utilities": {
+    "status": "pass",
+    "implementation": "unchanged upstream utility source with aliases",
+    "checks": [
+      "initial alias utility page",
+      "pointer action: native and synthetic targets, focus, containment, propagation, refs, ID and chained handlers",
+      "focus before shadow root",
+      "tab into shadow root",
+      "keyboard action through shadow root with both chained handlers"
+    ]
+  },
+  "stately": {
+    "source": "packages/react-stately/src",
+    "sourceMatches": "adobe/react-spectrum@57c56b8",
+    "sourcePatches": 0,
+    "runtimeAdapter": "compat/react.mjs",
+    "typeAdapter": "compat/react.d.ts"
+  },
+  "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+  "summary": {
+    "runtimeExports": 295,
+    "componentsAndCollectionHelpers": 151,
+    "pages": 53,
+    "passed": 53,
+    "checks": 165
+  },
+  "hydration": {
+    "status": "pass",
+    "hydration": {
+      "retainedOption": true,
+      "retainedSegment": true,
+      "retainedInput": true,
+      "retainedId": true
+    },
+    "result": "Client value; b; copy",
+    "checks": [
+      "initial native hydrate",
+      "focus hydrated input",
+      "edit hydrated input",
+      "select hydrated collection item",
+      "open hydrated menu",
+      "activate hydrated menu item",
+      "edit hydrated date segment"
+    ]
+  },
+  "componentPages": {
+    "Autocomplete": [
+      "autocomplete"
+    ],
+    "Breadcrumb": [
+      "breadcrumbs"
+    ],
+    "Breadcrumbs": [
+      "breadcrumbs"
+    ],
+    "Button": [
+      "combobox",
+      "button",
+      "stately"
+    ],
+    "Calendar": [
+      "datepicker"
+    ],
+    "CalendarCell": [
+      "datepicker"
+    ],
+    "CalendarGrid": [
+      "datepicker"
+    ],
+    "CalendarGridBody": [
+      "datepicker"
+    ],
+    "CalendarGridHeader": [
+      "datepicker"
+    ],
+    "CalendarHeaderCell": [
+      "datepicker"
+    ],
+    "CalendarHeading": [
+      "calendar"
+    ],
+    "CalendarMonthPicker": [
+      "calendar"
+    ],
+    "CalendarYearPicker": [
+      "calendar"
+    ],
+    "Cell": [
+      "table"
+    ],
+    "Checkbox": [
+      "checkbox"
+    ],
+    "CheckboxButton": [
+      "checkbox"
+    ],
+    "CheckboxField": [
+      "checkbox"
+    ],
+    "CheckboxGroup": [
+      "checkbox"
+    ],
+    "Collection": [
+      "listbox"
+    ],
+    "CollectionBuilder": [
+      "listbox"
+    ],
+    "ColorArea": [
+      "colorarea"
+    ],
+    "ColorField": [
+      "colorfield"
+    ],
+    "ColorPicker": [
+      "colorswatch"
+    ],
+    "ColorSlider": [
+      "colorslider"
+    ],
+    "ColorSwatch": [
+      "colorswatch"
+    ],
+    "ColorSwatchPicker": [
+      "colorswatch"
+    ],
+    "ColorSwatchPickerItem": [
+      "colorswatch"
+    ],
+    "ColorThumb": [
+      "colorarea"
+    ],
+    "ColorWheel": [
+      "colorwheel"
+    ],
+    "ColorWheelTrack": [
+      "colorwheel"
+    ],
+    "Column": [
+      "table"
+    ],
+    "ColumnResizer": [
+      "table"
+    ],
+    "ComboBox": [
+      "combobox"
+    ],
+    "ComboBoxValue": [
+      "combobox"
+    ],
+    "DateField": [
+      "datefield"
+    ],
+    "DateInput": [
+      "datepicker"
+    ],
+    "DatePicker": [
+      "datepicker"
+    ],
+    "DateRangePicker": [
+      "daterange"
+    ],
+    "DateSegment": [
+      "datepicker"
+    ],
+    "DefaultCollectionRenderer": [
+      "listbox"
+    ],
+    "Dialog": [
+      "popover",
+      "modal"
+    ],
+    "DialogTrigger": [
+      "popover",
+      "modal"
+    ],
+    "Disclosure": [
+      "disclosure"
+    ],
+    "DisclosureGroup": [
+      "disclosure"
+    ],
+    "DisclosurePanel": [
+      "disclosure"
+    ],
+    "DropIndicator": [
+      "dnd"
+    ],
+    "DropZone": [
+      "dnd"
+    ],
+    "FieldError": [
+      "textfield",
+      "form"
+    ],
+    "FileTrigger": [
+      "file"
+    ],
+    "Focusable": [
+      "providers",
+      "refs"
+    ],
+    "Form": [
+      "form"
+    ],
+    "GridList": [
+      "dnd",
+      "gridlist"
+    ],
+    "GridListHeader": [
+      "gridlist"
+    ],
+    "GridListItem": [
+      "dnd",
+      "gridlist"
+    ],
+    "GridListLoadMoreItem": [
+      "loaders"
+    ],
+    "GridListSection": [
+      "gridlist"
+    ],
+    "Group": [
+      "datepicker",
+      "number"
+    ],
+    "Header": [
+      "menu"
+    ],
+    "Heading": [
+      "popover",
+      "disclosure"
+    ],
+    "I18nProvider": [
+      "providers"
+    ],
+    "Input": [
+      "combobox",
+      "textfield",
+      "stately"
+    ],
+    "Keyboard": [
+      "menu"
+    ],
+    "Label": [
+      "select",
+      "textfield",
+      "stately"
+    ],
+    "Link": [
+      "breadcrumbs"
+    ],
+    "ListBox": [
+      "select",
+      "listbox",
+      "stately"
+    ],
+    "ListBoxItem": [
+      "select",
+      "listbox",
+      "stately"
+    ],
+    "ListBoxLoadMoreItem": [
+      "loaders"
+    ],
+    "ListBoxSection": [
+      "select",
+      "listbox"
+    ],
+    "Menu": [
+      "menu"
+    ],
+    "MenuItem": [
+      "menu"
+    ],
+    "MenuLoadMoreItem": [
+      "loaders"
+    ],
+    "MenuSection": [
+      "menu"
+    ],
+    "MenuTrigger": [
+      "menu"
+    ],
+    "Meter": [
+      "meter"
+    ],
+    "Modal": [
+      "modal"
+    ],
+    "ModalOverlay": [
+      "modal"
+    ],
+    "NavigationTree": [
+      "navigation"
+    ],
+    "NavigationTreeHeader": [
+      "navigation"
+    ],
+    "NavigationTreeItem": [
+      "navigation"
+    ],
+    "NavigationTreeItemContent": [
+      "navigation"
+    ],
+    "NavigationTreeSection": [
+      "navigation"
+    ],
+    "NumberField": [
+      "number"
+    ],
+    "OverlayArrow": [
+      "popover"
+    ],
+    "Popover": [
+      "popover"
+    ],
+    "Pressable": [
+      "providers",
+      "refs"
+    ],
+    "PreviewTrigger": [
+      "preview"
+    ],
+    "ProgressBar": [
+      "meter"
+    ],
+    "Provider": [
+      "providers"
+    ],
+    "Radio": [
+      "radio"
+    ],
+    "RadioButton": [
+      "radio"
+    ],
+    "RadioField": [
+      "radio"
+    ],
+    "RadioGroup": [
+      "radio"
+    ],
+    "RangeCalendar": [
+      "daterange"
+    ],
+    "ResizableTableContainer": [
+      "table"
+    ],
+    "RouterProvider": [
+      "providers"
+    ],
+    "Row": [
+      "table"
+    ],
+    "SSRProvider": [
+      "providers"
+    ],
+    "SearchField": [
+      "search"
+    ],
+    "Section": [
+      "section"
+    ],
+    "Select": [
+      "select"
+    ],
+    "SelectValue": [
+      "select"
+    ],
+    "SelectionIndicator": [
+      "toggle"
+    ],
+    "Separator": [
+      "menu"
+    ],
+    "SharedElement": [
+      "shared"
+    ],
+    "SharedElementTransition": [
+      "shared"
+    ],
+    "Slider": [
+      "slider"
+    ],
+    "SliderFill": [
+      "slider"
+    ],
+    "SliderOutput": [
+      "slider"
+    ],
+    "SliderThumb": [
+      "slider"
+    ],
+    "SliderTrack": [
+      "slider"
+    ],
+    "SubmenuTrigger": [
+      "menu"
+    ],
+    "Switch": [
+      "switch"
+    ],
+    "SwitchButton": [
+      "switch"
+    ],
+    "SwitchField": [
+      "switch"
+    ],
+    "Tab": [
+      "tabs"
+    ],
+    "TabList": [
+      "tabs"
+    ],
+    "TabPanel": [
+      "tabs"
+    ],
+    "TabPanels": [
+      "tabs"
+    ],
+    "Table": [
+      "table"
+    ],
+    "TableBody": [
+      "table"
+    ],
+    "TableFooter": [
+      "table"
+    ],
+    "TableHeader": [
+      "table"
+    ],
+    "TableLoadMoreItem": [
+      "loaders"
+    ],
+    "Tabs": [
+      "tabs"
+    ],
+    "Tag": [
+      "tags"
+    ],
+    "TagGroup": [
+      "tags"
+    ],
+    "TagList": [
+      "tags"
+    ],
+    "Text": [
+      "datepicker",
+      "textfield"
+    ],
+    "TextArea": [
+      "textarea"
+    ],
+    "TextField": [
+      "textfield",
+      "stately"
+    ],
+    "TimeField": [
+      "datefield"
+    ],
+    "ToggleButton": [
+      "toggle",
+      "stately"
+    ],
+    "ToggleButtonGroup": [
+      "toggle"
+    ],
+    "Token": [
+      "tokenfield"
+    ],
+    "TokenField": [
+      "tokenfield"
+    ],
+    "TokenInput": [
+      "tokenfield"
+    ],
+    "Toolbar": [
+      "toolbar"
+    ],
+    "Tooltip": [
+      "tooltip"
+    ],
+    "TooltipTrigger": [
+      "tooltip"
+    ],
+    "Tree": [
+      "tree"
+    ],
+    "TreeHeader": [
+      "tree"
+    ],
+    "TreeItem": [
+      "tree"
+    ],
+    "TreeItemContent": [
+      "tree"
+    ],
+    "TreeLoadMoreItem": [
+      "loaders"
+    ],
+    "TreeSection": [
+      "tree"
+    ],
+    "UNSTABLE_Toast": [
+      "toast"
+    ],
+    "UNSTABLE_ToastContent": [
+      "toast"
+    ],
+    "UNSTABLE_ToastList": [
+      "toast"
+    ],
+    "UNSTABLE_ToastRegion": [
+      "toast"
+    ],
+    "Virtualizer": [
+      "virtual-list",
+      "virtual-grid",
+      "virtual-waterfall",
+      "virtual-table"
+    ],
+    "VisuallyHidden": [
+      "providers"
+    ]
+  },
+  "supportExports": {
+    "DEFAULT_SLOT": "Context slot symbol",
+    "DIRECTORY_DRAG_TYPE": "Drag data type constant",
+    "Layout": "Abstract base used by the four concrete virtualized layouts",
+    "LayoutInfo": "Internal virtualized layout geometry",
+    "Point": "Internal virtualized layout geometry",
+    "Rect": "Internal virtualized layout geometry",
+    "Size": "Grid and waterfall layout options",
+    "ListLayout": "virtual-list",
+    "GridLayout": "virtual-grid",
+    "WaterfallLayout": "virtual-waterfall",
+    "TableLayout": "virtual-table",
+    "TokenFieldValue": "tokenfield",
+    "UNSTABLE_ToastQueue": "toast"
+  },
+  "pages": [
+    {
+      "name": "menu",
+      "components": [
+        "MenuTrigger",
+        "Menu",
+        "MenuItem",
+        "MenuSection",
+        "SubmenuTrigger",
+        "Keyboard",
+        "Separator",
+        "Header"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "pointer opens menu",
+        "disabled item exposes aria-disabled",
+        "pointer selects Copy",
+        "Escape closes and restores trigger focus",
+        "ArrowDown opens keyboard menu",
+        "End moves to Share",
+        "ArrowRight opens submenu",
+        "Enter activates submenu item",
+        "reopen after submenu action",
+        "outside pointer dismisses"
+      ]
+    },
+    {
+      "name": "popover",
+      "components": [
+        "DialogTrigger",
+        "Popover",
+        "Dialog",
+        "Heading",
+        "OverlayArrow"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "open dialog popover",
+        "type inside popover",
+        "Escape restores trigger focus",
+        "reopen popover",
+        "close button restores focus",
+        "reopen for outside dismissal",
+        "outside dismissal"
+      ]
+    },
+    {
+      "name": "select",
+      "components": [
+        "Select",
+        "SelectValue",
+        "ListBox",
+        "ListBoxItem",
+        "ListBoxSection",
+        "Label"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "open select",
+        "disabled option",
+        "select Banana",
+        "keyboard opens",
+        "Home selects first focus",
+        "Enter selects Apple",
+        "open for cancellation",
+        "Escape preserves value and returns focus"
+      ]
+    },
+    {
+      "name": "combobox",
+      "components": [
+        "ComboBox",
+        "ComboBoxValue",
+        "Input",
+        "Button"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "focus input",
+        "filter by input",
+        "keyboard focuses filtered option",
+        "Enter selects Banana",
+        "show full collection",
+        "pointer selects Apple",
+        "open for Escape",
+        "Escape closes listbox"
+      ]
+    },
+    {
+      "name": "dnd",
+      "components": [
+        "GridList",
+        "GridListItem",
+        "DropIndicator",
+        "DropZone"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "Enter enters drag mode",
+        "next drop target",
+        "drop with Enter",
+        "native pointer drag to drop zone"
+      ]
+    },
+    {
+      "name": "datepicker",
+      "components": [
+        "DatePicker",
+        "Group",
+        "DateInput",
+        "DateSegment",
+        "Calendar",
+        "CalendarGrid",
+        "CalendarGridHeader",
+        "CalendarGridBody",
+        "CalendarHeaderCell",
+        "CalendarCell",
+        "Text"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "open calendar",
+        "pick October 15",
+        "reopen calendar",
+        "next month",
+        "previous month",
+        "Escape closes calendar",
+        "focus day segment",
+        "ArrowUp edits segment"
+      ]
+    },
+    {
+      "name": "button",
+      "components": [
+        "Button"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "pointer press",
+        "keyboard Space press",
+        "disabled button"
+      ]
+    },
+    {
+      "name": "toggle",
+      "components": [
+        "ToggleButton",
+        "ToggleButtonGroup",
+        "SelectionIndicator"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "independent toggle",
+        "group selects Bold",
+        "keyboard selects Italic"
+      ]
+    },
+    {
+      "name": "checkbox",
+      "components": [
+        "Checkbox",
+        "CheckboxGroup",
+        "CheckboxField",
+        "CheckboxButton"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "native checkbox via label",
+        "composed CheckboxButton toggles",
+        "group native checkbox via label"
+      ]
+    },
+    {
+      "name": "radio",
+      "components": [
+        "RadioGroup",
+        "Radio",
+        "RadioField",
+        "RadioButton"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "composed RadioButton selects"
+      ]
+    },
+    {
+      "name": "switch",
+      "components": [
+        "Switch",
+        "SwitchField",
+        "SwitchButton"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "composed SwitchButton toggles"
+      ]
+    },
+    {
+      "name": "textfield",
+      "components": [
+        "TextField",
+        "Input",
+        "Label",
+        "Text",
+        "FieldError"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "focus Name",
+        "controlled input",
+        "description association"
+      ]
+    },
+    {
+      "name": "textarea",
+      "components": [
+        "TextArea"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "focus textarea",
+        "multiline input"
+      ]
+    },
+    {
+      "name": "search",
+      "components": [
+        "SearchField"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "focus search",
+        "input updates",
+        "clear search"
+      ]
+    },
+    {
+      "name": "number",
+      "components": [
+        "NumberField",
+        "Group"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "increment button",
+        "decrement button",
+        "ArrowUp spinbutton"
+      ]
+    },
+    {
+      "name": "slider",
+      "components": [
+        "Slider",
+        "SliderTrack",
+        "SliderThumb",
+        "SliderFill",
+        "SliderOutput"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "keyboard increments slider",
+        "End sets maximum"
+      ]
+    },
+    {
+      "name": "meter",
+      "components": [
+        "Meter",
+        "ProgressBar"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "meter exposes value",
+        "progress exposes value"
+      ]
+    },
+    {
+      "name": "tabs",
+      "components": [
+        "Tabs",
+        "TabList",
+        "Tab",
+        "TabPanels",
+        "TabPanel"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "pointer changes tab",
+        "ArrowLeft returns to Alpha"
+      ]
+    },
+    {
+      "name": "disclosure",
+      "components": [
+        "Disclosure",
+        "DisclosureGroup",
+        "DisclosurePanel",
+        "Heading"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "expand panel",
+        "collapse with Enter"
+      ]
+    },
+    {
+      "name": "modal",
+      "components": [
+        "Modal",
+        "ModalOverlay",
+        "Dialog",
+        "DialogTrigger"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "open modal",
+        "Escape closes modal",
+        "reopen modal",
+        "close button"
+      ]
+    },
+    {
+      "name": "tooltip",
+      "components": [
+        "Tooltip",
+        "TooltipTrigger"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "hover tooltip",
+        "leave hides tooltip",
+        "keyboard focus tooltip",
+        "Escape closes tooltip"
+      ]
+    },
+    {
+      "name": "preview",
+      "components": [
+        "PreviewTrigger"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "hover preview",
+        "Escape hides preview"
+      ]
+    },
+    {
+      "name": "breadcrumbs",
+      "components": [
+        "Breadcrumbs",
+        "Breadcrumb",
+        "Link"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "link navigation"
+      ]
+    },
+    {
+      "name": "toolbar",
+      "components": [
+        "Toolbar"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "keyboard toolbar navigation",
+        "toggle in toolbar"
+      ]
+    },
+    {
+      "name": "listbox",
+      "components": [
+        "ListBox",
+        "ListBoxItem",
+        "ListBoxSection",
+        "Collection",
+        "DefaultCollectionRenderer",
+        "CollectionBuilder"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "select Alpha",
+        "multiple select Beta",
+        "Home keyboard focus"
+      ]
+    },
+    {
+      "name": "section",
+      "components": [
+        "Section"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "legacy section selection"
+      ]
+    },
+    {
+      "name": "gridlist",
+      "components": [
+        "GridList",
+        "GridListItem",
+        "GridListHeader",
+        "GridListSection"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "select Alpha row",
+        "select Beta checkbox via label"
+      ]
+    },
+    {
+      "name": "tags",
+      "components": [
+        "TagGroup",
+        "TagList",
+        "Tag"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "remove middle tag",
+        "remove first tag"
+      ]
+    },
+    {
+      "name": "table",
+      "components": [
+        "Table",
+        "Row",
+        "Cell",
+        "Column",
+        "ColumnResizer",
+        "TableHeader",
+        "TableBody",
+        "ResizableTableContainer",
+        "TableFooter"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "sort column",
+        "select row",
+        "Enter starts column resize",
+        "keyboard column resize",
+        "Escape ends column resize"
+      ]
+    },
+    {
+      "name": "tree",
+      "components": [
+        "Tree",
+        "TreeItem",
+        "TreeItemContent",
+        "TreeHeader",
+        "TreeSection"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "expand tree folder",
+        "keyboard collapse"
+      ]
+    },
+    {
+      "name": "navigation",
+      "components": [
+        "NavigationTree",
+        "NavigationTreeItem",
+        "NavigationTreeItemContent",
+        "NavigationTreeSection",
+        "NavigationTreeHeader"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "expand navigation folder",
+        "activate child link"
+      ]
+    },
+    {
+      "name": "datefield",
+      "components": [
+        "DateField",
+        "TimeField"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "edit birthday day",
+        "edit time minute"
+      ]
+    },
+    {
+      "name": "daterange",
+      "components": [
+        "DateRangePicker",
+        "RangeCalendar"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "open range calendar",
+        "choose range start",
+        "choose range end"
+      ]
+    },
+    {
+      "name": "calendar",
+      "components": [
+        "CalendarMonthPicker",
+        "CalendarYearPicker",
+        "CalendarHeading"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "change month picker",
+        "change year picker"
+      ]
+    },
+    {
+      "name": "autocomplete",
+      "components": [
+        "Autocomplete"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "focus filter",
+        "filter collection",
+        "activate filtered item"
+      ]
+    },
+    {
+      "name": "tokenfield",
+      "components": [
+        "TokenField",
+        "TokenInput",
+        "Token"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "focus token input",
+        "append text after token",
+        "type alongside token"
+      ]
+    },
+    {
+      "name": "colorfield",
+      "components": [
+        "ColorField"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "focus color input",
+        "enter blue",
+        "commit blue"
+      ]
+    },
+    {
+      "name": "colorarea",
+      "components": [
+        "ColorArea",
+        "ColorThumb"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "keyboard changes saturation"
+      ]
+    },
+    {
+      "name": "colorslider",
+      "components": [
+        "ColorSlider"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "keyboard changes hue"
+      ]
+    },
+    {
+      "name": "colorwheel",
+      "components": [
+        "ColorWheel",
+        "ColorWheelTrack"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "keyboard changes wheel hue"
+      ]
+    },
+    {
+      "name": "colorswatch",
+      "components": [
+        "ColorSwatch",
+        "ColorSwatchPicker",
+        "ColorSwatchPickerItem",
+        "ColorPicker"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "open color picker",
+        "select blue swatch"
+      ]
+    },
+    {
+      "name": "form",
+      "components": [
+        "Form",
+        "FieldError"
+      ],
+      "status": "pass",
+      "driver": "computer-use-linux",
+      "checks": [
+        "native required validation",
+        "keyboard input clears validation on blur",
+        "valid native FormData submission",
+        "native reset clears value and validation"
+      ],
+      "note": "Rechecked with native desktop clicks and keyboard input after invalid form submission disconnected Playwriter. AT-SPI exposed only the browser frame, so screenshot coordinates and visual readback were used."
+    },
+    {
+      "name": "file",
+      "components": [
+        "FileTrigger"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "file chooser selection"
+      ]
+    },
+    {
+      "name": "toast",
+      "components": [
+        "UNSTABLE_Toast",
+        "UNSTABLE_ToastRegion",
+        "UNSTABLE_ToastList",
+        "UNSTABLE_ToastContent"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "enqueue toast",
+        "dismiss toast"
+      ]
+    },
+    {
+      "name": "shared",
+      "components": [
+        "SharedElementTransition",
+        "SharedElement"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "move shared element",
+        "move it back"
+      ]
+    },
+    {
+      "name": "providers",
+      "components": [
+        "Provider",
+        "SSRProvider",
+        "RouterProvider",
+        "I18nProvider",
+        "Pressable",
+        "Focusable",
+        "VisuallyHidden"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "context button props",
+        "Pressable wraps native button",
+        "Focusable keeps native focus",
+        "router intercepts link"
+      ]
+    },
+    {
+      "name": "loaders",
+      "components": [
+        "MenuLoadMoreItem",
+        "ListBoxLoadMoreItem",
+        "GridListLoadMoreItem",
+        "TreeLoadMoreItem",
+        "TableLoadMoreItem"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "all five loading indicators render"
+      ]
+    },
+    {
+      "name": "virtual-list",
+      "components": [
+        "Virtualizer"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "virtualized first item renders",
+        "scroll virtual collection",
+        "keyboard reaches last virtual item"
+      ]
+    },
+    {
+      "name": "virtual-grid",
+      "components": [
+        "Virtualizer"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "virtualized first item renders",
+        "scroll virtual collection",
+        "keyboard reaches last virtual item"
+      ]
+    },
+    {
+      "name": "virtual-waterfall",
+      "components": [
+        "Virtualizer"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "virtualized first item renders",
+        "scroll virtual collection",
+        "keyboard reaches last virtual item"
+      ]
+    },
+    {
+      "name": "virtual-table",
+      "components": [
+        "Virtualizer"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "virtualized first item renders",
+        "scroll virtual collection",
+        "keyboard reaches last virtual item"
+      ]
+    },
+    {
+      "name": "refs",
+      "components": [
+        "Pressable",
+        "Focusable"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "function component press ref",
+        "function component focus ref"
+      ]
+    },
+    {
+      "name": "stately",
+      "components": [
+        "ListBox",
+        "ListBoxItem",
+        "TextField",
+        "Label",
+        "Input",
+        "ToggleButton",
+        "Button"
+      ],
+      "status": "pass",
+      "driver": "Playwriter",
+      "checks": [
+        "async initial load",
+        "controlled state becomes selected",
+        "controlled state becomes unselected",
+        "async list selection",
+        "async load more appends records",
+        "async sort orders records",
+        "focus controlled filter",
+        "async filter reloads records",
+        "clear filter reloads initial records",
+        "append records before reload",
+        "reload replaces appended records"
+      ]
+    }
+  ],
+  "limitations": [
+    "The upstream Jest and Storybook suites were not migrated or run.",
+    "Browser interactions were exercised in Chromium on Linux; Firefox, Safari, touch and screen readers were not tested.",
+    "Representative configurations were exercised; passing a page does not verify every prop or interaction combination.",
+    "Hydration was exercised for text input, date segments, a listbox and a menu from the distributed bundle.",
+    "The standalone package is ESM only; React Spectrum and unrelated monorepo packages remain outside the port."
+  ]
+}

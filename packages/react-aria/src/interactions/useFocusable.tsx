@@ -205,7 +205,7 @@ export const Focusable: React.ForwardRefExoticComponent<
     }, [ref, props.isDisabled]);
 
     // @ts-ignore
-    let childRef = parseInt(React.version, 10) < 19 ? child.ref : child.props.ref;
+    let childRef = typeof child.type === 'function' ? child.props.ref : child.ref;
 
     return React.cloneElement(child, {
       ...mergeProps(focusableProps, child.props),
