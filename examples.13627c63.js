@@ -1124,19 +1124,43 @@ add('slider', 'Slider SliderTrack SliderThumb SliderFill SliderOutput', ()=>{
     const [v, set] = (0, _compat.useState)(40);
     return /*#__PURE__*/ (0, _jsxRuntime.jsxs)((0, _jsxRuntime.Fragment), {
         children: [
-            /*#__PURE__*/ (0, _jsxRuntime.jsxs)(_indexJs.Slider, {
-                value: v,
-                onChange: set,
+            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                className: "slider-example",
                 children: [
-                    /*#__PURE__*/ (0, _jsxRuntime.jsx)(_indexJs.Label, {
-                        children: "Volume"
-                    }),
-                    /*#__PURE__*/ (0, _jsxRuntime.jsx)(_indexJs.SliderOutput, {}),
-                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)(_indexJs.SliderTrack, {
+                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)(_indexJs.Slider, {
+                        value: v,
+                        onChange: set,
                         children: [
-                            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_indexJs.SliderFill, {}),
-                            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_indexJs.SliderThumb, {})
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_indexJs.Label, {
+                                children: "Volume"
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_indexJs.SliderOutput, {}),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsxs)(_indexJs.SliderTrack, {
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                                        className: "slider-rail",
+                                        "aria-hidden": "true",
+                                        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_indexJs.SliderFill, {})
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)(_indexJs.SliderThumb, {})
+                                ]
+                            })
                         ]
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                        className: "slider-limits",
+                        "aria-hidden": "true",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("span", {
+                                children: "Quiet"
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("span", {
+                                children: "Loud"
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                        children: "Drag the thumb, click the rail or use the arrow keys."
                     })
                 ]
             }),
@@ -1240,7 +1264,9 @@ add('disclosure', 'Disclosure DisclosureGroup DisclosurePanel Heading', ()=>/*#_
                         })
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)(_indexJs.DisclosurePanel, {
-                        children: "Alpha panel"
+                        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                            children: "Alpha panel"
+                        })
                     })
                 ]
             }),
@@ -1254,7 +1280,9 @@ add('disclosure', 'Disclosure DisclosureGroup DisclosurePanel Heading', ()=>/*#_
                         })
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)(_indexJs.DisclosurePanel, {
-                        children: "Beta panel"
+                        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                            children: "Beta panel"
+                        })
                     })
                 ]
             })

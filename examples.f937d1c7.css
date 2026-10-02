@@ -660,6 +660,55 @@ output[data-testid="result"]:empty:after {
   height: 20px;
 }
 
+:is(.react-aria-Slider, .react-aria-ColorSlider)[data-orientation="horizontal"] .react-aria-SliderTrack :is(.react-aria-SliderThumb, .react-aria-ColorThumb) {
+  top: 50%;
+}
+
+.slider-example {
+  box-sizing: border-box;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 12px;
+  width: 360px;
+  max-width: 100%;
+  padding: 20px 24px;
+}
+
+.slider-example .react-aria-Slider {
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.slider-example .react-aria-SliderTrack {
+  background: none;
+  height: 28px;
+  margin: 4px 12px;
+}
+
+.slider-rail {
+  pointer-events: none;
+  background: #dce4f2;
+  border-radius: 10px;
+  width: 100%;
+  height: 8px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider-limits {
+  color: var(--muted);
+  justify-content: space-between;
+  font-size: 12px;
+  display: flex;
+}
+
+.slider-example p {
+  color: var(--muted);
+  margin: 16px 0 0;
+  font-size: 13px;
+}
+
 .meter-track {
   background: #dce4f2;
   border-radius: 10px;
@@ -799,7 +848,12 @@ button:has(.react-aria-ColorSwatch) {
 }
 
 .react-aria-DisclosurePanel {
+  height: var(--disclosure-panel-height, auto);
   color: var(--muted);
+  overflow: clip;
+}
+
+.react-aria-DisclosurePanel > div {
   padding: 4px 18px 18px;
 }
 
