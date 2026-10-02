@@ -13,48 +13,21 @@
     "emitDeclarationOnly": true,
     "outDir": "dist/types",
     "rootDir": "vendor",
-    "lib": [
-      "ESNext",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "paths": {
-      "react-aria": [
-        "./vendor/react-aria/exports/index.ts"
-      ],
-      "react-aria/*": [
-        "./vendor/react-aria/exports/*.ts"
-      ],
-      "react-stately": [
-        "./vendor/react-stately/exports/index.ts"
-      ],
-      "react-stately/*": [
-        "./vendor/react-stately/exports/*.ts"
-      ],
-      "@react-types/shared": [
-        "./vendor/@react-types/shared/src/index.d.ts"
-      ],
-      "@react-types/shared/preact": [
-        "./compat/types.d.ts"
-      ],
-      "preact/jsx-runtime": [
-        "./types/jsx-runtime.d.ts"
-      ],
-      "react": [
-        "./compat/react.d.ts"
-      ],
-      "use-sync-external-store/shim/index.js": [
-        "./node_modules/preact/compat"
-      ],
-      "react-dom": [
-        "./compat/react.d.ts"
-      ]
+      "react-aria": ["./vendor/react-aria/exports/index.ts"],
+      "react-aria/*": ["./vendor/react-aria/exports/*.ts"],
+      "react-stately": ["./vendor/react-stately/exports/index.ts"],
+      "react-stately/*": ["./vendor/react-stately/exports/*.ts"],
+      "@react-types/shared": ["./vendor/@react-types/shared/src/index.d.ts"],
+      "@react-types/shared/preact": ["./compat/types.d.ts"],
+      "preact/jsx-runtime": ["./types/jsx-runtime.d.ts"],
+      "react": ["./compat/react.d.ts"],
+      "use-sync-external-store/shim/index.js": ["./node_modules/preact/compat"],
+      "react-dom": ["./compat/react.d.ts"]
     },
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "types": []
   },
-  "include": [
-    "vendor/**/*.ts",
-    "vendor/**/*.tsx",
-    "types/globals.d.ts"
-  ]
+  "include": ["vendor/**/*.ts", "vendor/**/*.tsx", "types/globals.d.ts"]
 }

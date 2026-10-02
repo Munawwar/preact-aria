@@ -803,15 +803,15 @@ const useLayoutEffect = typeof document !== 'undefined' ? (0, _reactDefault.defa
  * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
- */ // We must avoid a circular dependency with @react-aria/utils, and this useLayoutEffect is
-// guarded by a check that it only runs on the client side.
-// eslint-disable-next-line rsp-rules/use-layout-effect-rule
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 /** Preact 11 generates hydration-safe ids without a provider. Retained for API compatibility. */ parcelHelpers.export(exports, "SSRProvider", ()=>SSRProvider);
 /** @private */ parcelHelpers.export(exports, "useSSRSafeId", ()=>useSSRSafeId);
 /** Returns true during server rendering and the initial hydration render. */ parcelHelpers.export(exports, "useIsSSR", ()=>useIsSSR);
 var _jsxRuntime = require("preact/jsx-runtime");
+// We must avoid a circular dependency with @react-aria/utils, and this useLayoutEffect is
+// guarded by a check that it only runs on the client side.
+// eslint-disable-next-line rsp-rules/use-layout-effect-rule
 var _compat = require("preact/compat");
 var _compatDefault = parcelHelpers.interopDefault(_compat);
 function SSRProvider(props) {

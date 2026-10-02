@@ -1252,10 +1252,7 @@ function $1ed38b451d0ee014$export$13aea1a3cb5e3f1f(e, router, href, routerOption
  * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
- */ // We must avoid a circular dependency with @react-aria/utils, and this useLayoutEffect is
-// guarded by a check that it only runs on the client side.
-// eslint-disable-next-line rsp-rules/use-layout-effect-rule
-function $5c0bf7ad8f3db9b6$export$9f8ac96af4b1b2ae(props) {
+ */ function $5c0bf7ad8f3db9b6$export$9f8ac96af4b1b2ae(props) {
     return (0, _jsxRuntime.jsx)((0, _jsxRuntime.Fragment), {
         children: props.children
     });
@@ -3702,7 +3699,9 @@ function $0bf6e6317fd1f3eb$var$filterChildren(collection, newCollection, firstCh
     }
 }
 class $916600c8b116f8ab$export$dc064fe9e59310fd extends $916600c8b116f8ab$export$410b0c854570d131 {
-    nodeType = 8;
+    // These are collection elements. Preact skips comment nodes when advancing
+    // its insertion cursor, so marking items as comments breaks keyed reordering.
+    nodeType = 1;
     node;
     isMutated = true;
     _index = 0;
@@ -4188,10 +4187,13 @@ function $60ccbbd12a67a50a$export$f8168d8dd8fd66e6(props) {
         let shouldStopPropagation = true;
         // Preact passes native DOM events. Their fields are enumerable on the
         // prototype, so object spread alone drops key, target, and currentTarget.
-        // Copy inherited fields while the event is being dispatched.
+        // Events constructed with defineProperty may also have non-enumerable own
+        // fields. Copy both sets of fields while the event is being dispatched.
         let eventProps = {};
-        for(let key in e){
-            let value1 = e[key];
+        let keys = new Set(Object.getOwnPropertyNames(e));
+        for(let key in e)keys.add(key);
+        for (let key of keys){
+            let value1 = Reflect.get(e, key);
             eventProps[key] = typeof value1 === 'function' ? value1.bind(e) : value1;
         }
         let event = {

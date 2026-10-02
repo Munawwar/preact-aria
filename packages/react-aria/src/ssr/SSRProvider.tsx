@@ -10,11 +10,12 @@
  * governing permissions and limitations under the License.
  */
 
+import type {JSX, ReactNode} from '@react-types/shared/preact';
+
 // We must avoid a circular dependency with @react-aria/utils, and this useLayoutEffect is
 // guarded by a check that it only runs on the client side.
 // eslint-disable-next-line rsp-rules/use-layout-effect-rule
 import React, {useId, useSyncExternalStore} from 'preact/compat';
-import type {JSX, ReactNode} from '@react-types/shared/preact';
 
 export interface SSRProviderProps {
   children: ReactNode;

@@ -1,8 +1,8 @@
 # Preact 11 port verification
 
-Verified on October 1, 2026 against Preact 11.0.0. Upstream source is `adobe/react-spectrum@57c56b8`, with React Aria Components 1.21.1. The port is on branch `main`.
+Initially verified on October 1, 2026; upstream browser suite verified on October 3, 2026 against Preact 11.0.0. Upstream source is `adobe/react-spectrum@57c56b8`, with React Aria Components 1.21.1. The port is on branch `main`.
 
-The earlier catalog and Showcase sections describe fixtures now archived in the tag `backup/custom-examples-2026-10-02`. Their historical browser results remain valid for that commit. See the upstream-example review at the end for the replacement site.
+The earlier catalog and Showcase sections describe fixtures now archived in the tag `backup/custom-examples-2026-10-02`. Their historical browser results remain valid for that commit. See the upstream-example review for the replacement site and the October 3 browser-suite report below for current cross-browser results.
 
 ## Result
 
@@ -211,3 +211,57 @@ Other interaction batches are `controls`, `colors`, `dates`, `drag`, `geometry`,
 The replacement was published to `gh-pages` in `5773811a5`; GitHub reports the deployment built successfully. The deployment tree exactly matches the committed `preact-port/site` tree. Live browser checks passed all eight gallery thumbnails, menu/submenu mouse and keyboard actions, popover Escape, select and combobox selection, date-picker opening, CRUD editing/saving/selection/filtering, CommandPalette Ctrl+J/Escape and keyboard skip navigation. Screenshot evidence is `artifacts/upstream-live-gallery.png`.
 
 One edge case remains: immediately reopening Select while its previous popup is still animating closed can lose popup focus. Normal reopening after the exit finishes passes arrow/Enter selection. The browser driver waits for the closing popup to disappear; the rapid-reopen focus race is not fixed, and its behavior in upstream React has not been compared.
+
+
+## Upstream browser suite — October 3, 2026
+
+A separate clone at exact upstream commit `57c56b8cbfa65294fbaed528ab9580ade0d339cb` was used as the React reference. Its tracked source stayed unchanged; HEAD tree is `f1237c972213f93dfacc49a49bd1daf6070f4508`. All 21 upstream browser fixtures were attempted on all three engines. The fork adds two regression files, for 23 fixtures and 69 browser/file projects.
+
+| Run | Passed | Failed | Existing skips |
+| --- | ---: | ---: | ---: |
+| Untouched React, original runner | 379 | 17 | 69 |
+| Untouched React, shared clipboard helper and serial fixtures | 396 | 0 | 69 |
+| Preact, same conditions plus four new test cases per engine | **408** | **0** | **69** |
+| Adapted assertions and new regressions against untouched React | 64 | 0 | 38 |
+
+The last two rows overlap: the reference regression run reuses Chat and Chromium IME checks, rather than adding 64 new cases. Per-case records, browser counts, versions and source provenance are committed in [browser-results.json](./verification/browser-results.json). The original baseline's 16 clipboard failures came from calling `navigator.locks` in Node, where it is unavailable. Its remaining Firefox Chat focus failure disappeared when browser fixtures ran serially. The same helper and scheduling are applied to both frameworks.
+
+### Runtime fixes and regression coverage
+
+- `react-aria/src/interactions/createEventHandler.ts`: preserve non-enumerable own event properties as well as inherited native fields. Previously some synthetic keyboard events lost `key`, causing errors and broken keyboard navigation. New Button tests check trusted keyboard input and explicitly non-enumerable fields, including modifiers and dispatch targets.
+- `react-aria/src/collections/Document.ts`: identify virtual collection elements as elements rather than comments. Preact's insertion cursor skips comments; prepended and reordered keyed items therefore ended up in the wrong positions. Chat's original loading/order assertions now pass on all three engines. New ListBox tests check prepending, reversing, and retained selection.
+
+No new implementation files were added to the port delta: it remains 13 implementation files across `react-aria` and `react-aria-components`. There are four test-file changes, including two new files. `@react-spectrum/ai` has only the Chat test assertion change. Stately, shared types, and Aria utilities still match upstream exactly.
+
+### Test harness changes
+
+`vitest.preact.browser.config.ts` merges the original config. React module names resolve to the installed Preact 11 runtime, including real `preact/test-utils` `act`. The original Vitest Playwright driver, browser commands, fixture discovery, localization/SVG plugins, setup and console-error checking remain enabled. Preact test-utils is prebundled to prevent a late dependency-optimizer reload.
+
+Adobe's DOM Testing Library helper uses `delay: null`; its synchronous navigation loops require the actual Preact effect queue to flush after events. The added event wrapper invokes real `act`, as Preact Testing Library does. Native Playwright actions are unchanged. A FIFO Promise queue replaces the unavailable Node lock API while leaving copy/cut/paste operations on the actual system clipboard. Tests run one fixture at a time per engine to prevent overlapping native focus/selection operations.
+
+Two existing tests received assertion corrections, with identical expected behavior: Chat uses asynchronous browser focus assertions for the same three targets; one IME check polls both DOM text and the controlled model together, avoiding a stale captured expected value. Both adaptations pass against unchanged upstream React. There are no added skips, relaxed expected values, increased timeouts, fake versions, or no-op effects.
+
+### Existing skips and coverage limits
+
+The 69 skips match the React reference exactly:
+
+- Chromium-only IME composition: 38 skips on Firefox/WebKit.
+- Shadow DOM focus: 3 Firefox skips.
+- S2 ButtonGroup: 3; Combobox: 6; Menu: 6; Picker: 6 (upstream disabled tests).
+- S2 DropZone: 6 platform skips; DateRangePicker: 1 Firefox skip.
+
+The passing cases include TokenField editing, selection, clipboard and Chromium IME, shadow DOM, collections, ComboBox/ListBox/GridList navigation, Tree virtualization, dialogs/modals, tabs, S2 collection controls, and AI Chat. This is all existing upstream browser fixtures, not every component/prop combination. WebKit on Linux is coverage of that engine, not a Safari-device certification. Screen readers, touch, forced colors, visual snapshots and the previously documented rapid Select reopen race remain outside this result. Chromatic was not run, per repository instructions.
+
+### Other gates
+
+The original full Jest and SSR commands were attempted on both checkouts. They are separate from the passing browser suite:
+
+- Untouched React Jest: 350 suites passed, 33 failed; 8,247 tests passed, 114 failed, 16 skipped. Most failing tests (88) hit the JSDOM environment's missing `Symbol.dispose`; other failures include aria-sort and mock expectations. These failures were present before port changes.
+- Untouched React SSR: all 60 suites / 74 tests passed with `BROWSERSLIST_IGNORE_OLD_DATA=true`. Without that environment setting, the stale-data warning fails console checks.
+- Fork's original React Jest/SSR runners are not configured for the standalone Preact dependency/type bridge. Jest reported 97 passing and 286 failing suites; SSR could not load its 60 suites. Most fail during module resolution, so these are not meaningful Preact behavioral results. Porting those runners and separating React-only expectations is pending.
+- The rebuilt library and committed static site passed; all five standalone Node tests and strict consumer checks in Bundler/NodeNext passed. The standalone declaration build now explicitly excludes unrelated ambient `@types` from the parent monorepo; `skipLibCheck` remains false.
+- Root lint/type checking also exposes the existing React manifest/type configuration for the Preact SSR module. Standalone Preact gates are recorded in the machine-readable report.
+
+The original collection comment-node choice worked around React DevTools dimension inspection. A future dual React/Preact implementation must revisit that behavior and the Preact-specific SSR provider; this task does not claim restored React support.
+
+Environment: Node 22.23.3, Preact 11.0.0, Vitest 4.0.18, Playwright 1.57.0, Linux Mint 22.3. Pinned browser builds: Chromium 143 / 1200, Firefox 144 / 1497, WebKit 2227. This host lacked libavif16; unmodified distro libavif/libgav1/libyuv libraries were extracted into Playwright's WebKit runtime library directories without altering repository code or browser binaries. Reproduction commands are in [README.md](./README.md#run-the-upstream-browser-tests).

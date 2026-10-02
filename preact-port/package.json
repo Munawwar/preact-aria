@@ -12,6 +12,7 @@
     "README.md",
     "VERIFICATION.md",
     "verification/results.json",
+    "verification/browser-results.json",
     "compat/react.mjs",
     "upstream-patches.json",
     "example-patches.json"
@@ -80,6 +81,13 @@
   "@parcel/resolver-default": {
     "packageExports": true
   },
+  "alias": {
+    "react": "./compat/react.mjs",
+    "use-sync-external-store/shim/index.js": "./compat/react.mjs",
+    "react-dom": "./compat/react.mjs",
+    "react/jsx-runtime": "preact/jsx-runtime",
+    "react/jsx-dev-runtime": "preact/jsx-dev-runtime"
+  },
   "targets": {
     "module": {
       "isLibrary": true,
@@ -123,12 +131,5 @@
       "sourceMap": false,
       "isLibrary": false
     }
-  },
-  "alias": {
-    "react": "./compat/react.mjs",
-    "use-sync-external-store/shim/index.js": "./compat/react.mjs",
-    "react-dom": "./compat/react.mjs",
-    "react/jsx-runtime": "preact/jsx-runtime",
-    "react/jsx-dev-runtime": "preact/jsx-dev-runtime"
   }
 }

@@ -251,7 +251,7 @@ describeOrSkip('TokenField IME composition (Android)', () => {
     // The component is not stuck composing: the DOM re-rendered to match the model (a stuck
     // composition would leave the blocked DOM diverged from the model), with both characters
     // present and no duplication.
-    await expect.poll(() => domText(textbox)).toBe(getValue().toString());
+    await expect.poll(() => domText(textbox) === getValue().toString()).toBe(true);
     expect(getValue().toString()).toHaveLength(2);
     expect([...getValue().toString()].sort().join('')).toBe('hx');
 

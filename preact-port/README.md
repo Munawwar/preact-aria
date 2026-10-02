@@ -87,7 +87,34 @@ Parcel's Pages target uses relative asset URLs and omits source maps. `.nojekyll
 
 The archived custom catalog passed its representative checks on all 53 pages, covering 151 component and collection helper exports with 165 checks. The separate utility page also passed pointer and Tab/Space checks, including both native and synthetic shadow-event target branches. Menu, popover, select, combobox, keyboard and pointer drag/drop, and date picker were verified first. The tarball also passed a separate strict TypeScript (Bundler and NodeNext) and SSR consumer with no React installed.
 
-See [VERIFICATION.md](./VERIFICATION.md) for current upstream-example checks and [the historical component coverage report](./verification/results.json) for the archived fixture results and limits. This remains an experimental port: the upstream suites and other browsers, touch, and screen readers have not been verified.
+See [VERIFICATION.md](./VERIFICATION.md) for current upstream-example checks and [the historical component coverage report](./verification/results.json) for the archived fixture results and limits. The full upstream browser suite now passes on Chromium, Firefox and WebKit under Preact: **408 passed, 69 upstream skips** including new regressions. Touch and screen readers remain unverified, and the original React Jest/SSR runners still need Preact configuration. See the current browser report below.
+
+## Run the upstream browser tests
+
+Install both dependency sets. The original root postinstall builds React icons; skip it for this Preact browser harness:
+
+```sh
+# From the repository root, with Node 22 or newer:
+node .yarn/releases/yarn-4.18.0.cjs install --immutable --mode=skip-build
+npm ci --prefix preact-port --workspaces=false
+node .yarn/releases/yarn-4.18.0.cjs test:browser:preact
+```
+
+Playwright installs its pinned Chromium, Firefox and WebKit. Linux may also require `node .yarn/releases/yarn-4.18.0.cjs playwright install-deps` with administrator privileges. Keep `CI` unset to run the upstream Chat checks that skip on CI. Results are written to ignored `preact-port/artifacts/browser/cases.json`.
+
+This uses every upstream `*.browser.test.tsx` fixture, the real Preact runtime and its `act`, the original browser driver, and upstream console-error checks. Tests that use Adobe's synthetic DOM helper flush Preact's real effects after each event. Native focus/selection fixtures run serially, and a Node queue protects the actual OS clipboard. The React reference uses the same scheduling and clipboard helper. No new skips or fake framework APIs were introduced.
+
+To compare against untouched React at the fork point:
+
+```sh
+git clone https://github.com/adobe/react-spectrum.git ../react-aria-upstream-baseline
+git -C ../react-aria-upstream-baseline checkout 57c56b8cbfa65294fbaed528ab9580ade0d339cb
+(cd ../react-aria-upstream-baseline && node .yarn/releases/yarn-4.18.0.cjs install --immutable)
+node preact-port/scripts/browser-reference.mjs ../react-aria-upstream-baseline
+node preact-port/scripts/browser-reference.mjs ../react-aria-upstream-baseline --regressions
+```
+
+The reference script rejects changed tracked files or the wrong commit. Its generated configuration and copied regression fixtures live only in the clone's ignored `dist` directory. [Current results and remaining limits](./VERIFICATION.md#upstream-browser-suite--october-3-2026) include the exact comparison and skip breakdown.
 
 ## Source development
 
@@ -116,11 +143,11 @@ TypeScript maps React imports to `compat/react.d.ts`; `compat/types.d.ts` suppli
 | `react-aria/src/utils` | Entire directory unchanged, including the native/synthetic shadow-event branches |
 | `@react-aria/*`, `@react-stately/*` wrappers | Unchanged re-export source and metadata; not separately distributed by this harness |
 | `@internationalized/*` | Used unchanged; no Preact-specific port required |
-| `react-aria` and `react-aria-components` | 13 files differ in total; original imports and manifests otherwise retained |
+| `react-aria` and `react-aria-components` | 13 implementation files differ; original imports and manifests otherwise retained. Four browser test files also differ, including two new regressions |
 | Spectrum components/icons | Icons use `@adobe/react-spectrum` rendering wrappers; outside this unstyled distribution and not ported or verified |
 
-The remaining changes concern portal collection DOM, native event wrapping, refs, SSR IDs/hydration, boolean `draggable`, the entry marker, and a few type checks/dynamic tags. The exact files and reasons are tracked in [upstream-patches.json](./upstream-patches.json). The source delta dropped from 252 files after the Stately refactor to 13 files across the upstream package trees.
+The remaining changes concern portal collection DOM, native event wrapping, refs, SSR IDs/hydration, boolean `draggable`, the entry marker, and a few type checks/dynamic tags. The exact files and reasons are tracked in [upstream-patches.json](./upstream-patches.json). The implementation delta dropped from 252 files after the Stately refactor to 13 files across two upstream workspaces. The inventory now also includes four browser test files; the AI workspace has a test-only change.
 
 `npm run check:upstream` runs during the build. It verifies the unchanged trees and requires the source patch inventory to match the actual diff. It detects drift; it does not verify behavioral compatibility. The upstream manifests stay intact, and `sync` generates Preact metadata from this package's manifest.
 
-`main` preserves the complete upstream Git history through `57c56b8`, followed by one squashed commit containing this Preact fork. That original upstream revision is also the source audit baseline. For an upstream update, fetch upstream and merge the chosen upstream revision into `main`, review those 13 patches and any conflicts, update the baseline/inventory deliberately, then rebuild, check the consumer declarations, and rerun the browser pages. New upstream React APIs may require additional adapter exports. The archived `stately` fixture exercised async loading, pagination, sorting, filtering, reloading, selection, and controlled toggle updates.
+`main` preserves the complete upstream Git history through `57c56b8`, followed by the Preact fork commit and subsequent fixes. That original upstream revision is also the source audit baseline. For an upstream update, fetch upstream and merge the chosen upstream revision into `main`, review those 13 patches and any conflicts, update the baseline/inventory deliberately, then rebuild, check the consumer declarations, and rerun the browser pages. New upstream React APIs may require additional adapter exports. The archived `stately` fixture exercised async loading, pagination, sorting, filtering, reloading, selection, and controlled toggle updates.

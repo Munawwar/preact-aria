@@ -442,10 +442,7 @@ type LinkWithRequiredHref = Required<Pick<AnchorHTMLAttributes<HTMLAnchorElement
   Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>;
 
 // Same as DOMRenderProps but specific for the case where the element could be a 'a' or 'div' element.
-export interface PossibleLinkDOMRenderProps<
-  Fallback extends keyof React.JSX.IntrinsicElements,
-  T
-> {
+export interface PossibleLinkDOMRenderProps<Fallback extends keyof React.JSX.IntrinsicElements, T> {
   /**
    * Overrides the default DOM element with a custom render function.
    * This allows rendering existing components with built-in styles and behaviors

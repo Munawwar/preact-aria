@@ -80,10 +80,7 @@
     ],
     "patchedFiles": 13,
     "runtimeAdapter": "compat/react.mjs",
-    "typeAdapters": [
-      "compat/react.d.ts",
-      "compat/types.d.ts"
-    ]
+    "typeAdapters": ["compat/react.d.ts", "compat/types.d.ts"]
   },
   "utilities": {
     "status": "pass",
@@ -131,485 +128,157 @@
     ]
   },
   "componentPages": {
-    "Autocomplete": [
-      "autocomplete"
-    ],
-    "Breadcrumb": [
-      "breadcrumbs"
-    ],
-    "Breadcrumbs": [
-      "breadcrumbs"
-    ],
-    "Button": [
-      "combobox",
-      "button",
-      "stately"
-    ],
-    "Calendar": [
-      "datepicker"
-    ],
-    "CalendarCell": [
-      "datepicker"
-    ],
-    "CalendarGrid": [
-      "datepicker"
-    ],
-    "CalendarGridBody": [
-      "datepicker"
-    ],
-    "CalendarGridHeader": [
-      "datepicker"
-    ],
-    "CalendarHeaderCell": [
-      "datepicker"
-    ],
-    "CalendarHeading": [
-      "calendar"
-    ],
-    "CalendarMonthPicker": [
-      "calendar"
-    ],
-    "CalendarYearPicker": [
-      "calendar"
-    ],
-    "Cell": [
-      "table"
-    ],
-    "Checkbox": [
-      "checkbox"
-    ],
-    "CheckboxButton": [
-      "checkbox"
-    ],
-    "CheckboxField": [
-      "checkbox"
-    ],
-    "CheckboxGroup": [
-      "checkbox"
-    ],
-    "Collection": [
-      "listbox"
-    ],
-    "CollectionBuilder": [
-      "listbox"
-    ],
-    "ColorArea": [
-      "colorarea"
-    ],
-    "ColorField": [
-      "colorfield"
-    ],
-    "ColorPicker": [
-      "colorswatch"
-    ],
-    "ColorSlider": [
-      "colorslider"
-    ],
-    "ColorSwatch": [
-      "colorswatch"
-    ],
-    "ColorSwatchPicker": [
-      "colorswatch"
-    ],
-    "ColorSwatchPickerItem": [
-      "colorswatch"
-    ],
-    "ColorThumb": [
-      "colorarea"
-    ],
-    "ColorWheel": [
-      "colorwheel"
-    ],
-    "ColorWheelTrack": [
-      "colorwheel"
-    ],
-    "Column": [
-      "table"
-    ],
-    "ColumnResizer": [
-      "table"
-    ],
-    "ComboBox": [
-      "combobox"
-    ],
-    "ComboBoxValue": [
-      "combobox"
-    ],
-    "DateField": [
-      "datefield"
-    ],
-    "DateInput": [
-      "datepicker"
-    ],
-    "DatePicker": [
-      "datepicker"
-    ],
-    "DateRangePicker": [
-      "daterange"
-    ],
-    "DateSegment": [
-      "datepicker"
-    ],
-    "DefaultCollectionRenderer": [
-      "listbox"
-    ],
-    "Dialog": [
-      "popover",
-      "modal"
-    ],
-    "DialogTrigger": [
-      "popover",
-      "modal"
-    ],
-    "Disclosure": [
-      "disclosure"
-    ],
-    "DisclosureGroup": [
-      "disclosure"
-    ],
-    "DisclosurePanel": [
-      "disclosure"
-    ],
-    "DropIndicator": [
-      "dnd"
-    ],
-    "DropZone": [
-      "dnd"
-    ],
-    "FieldError": [
-      "textfield",
-      "form"
-    ],
-    "FileTrigger": [
-      "file"
-    ],
-    "Focusable": [
-      "providers",
-      "refs"
-    ],
-    "Form": [
-      "form"
-    ],
-    "GridList": [
-      "dnd",
-      "gridlist"
-    ],
-    "GridListHeader": [
-      "gridlist"
-    ],
-    "GridListItem": [
-      "dnd",
-      "gridlist"
-    ],
-    "GridListLoadMoreItem": [
-      "loaders"
-    ],
-    "GridListSection": [
-      "gridlist"
-    ],
-    "Group": [
-      "datepicker",
-      "number"
-    ],
-    "Header": [
-      "menu"
-    ],
-    "Heading": [
-      "popover",
-      "disclosure"
-    ],
-    "I18nProvider": [
-      "providers"
-    ],
-    "Input": [
-      "combobox",
-      "textfield",
-      "stately"
-    ],
-    "Keyboard": [
-      "menu"
-    ],
-    "Label": [
-      "select",
-      "textfield",
-      "stately"
-    ],
-    "Link": [
-      "breadcrumbs"
-    ],
-    "ListBox": [
-      "select",
-      "listbox",
-      "stately"
-    ],
-    "ListBoxItem": [
-      "select",
-      "listbox",
-      "stately"
-    ],
-    "ListBoxLoadMoreItem": [
-      "loaders"
-    ],
-    "ListBoxSection": [
-      "select",
-      "listbox"
-    ],
-    "Menu": [
-      "menu"
-    ],
-    "MenuItem": [
-      "menu"
-    ],
-    "MenuLoadMoreItem": [
-      "loaders"
-    ],
-    "MenuSection": [
-      "menu"
-    ],
-    "MenuTrigger": [
-      "menu"
-    ],
-    "Meter": [
-      "meter"
-    ],
-    "Modal": [
-      "modal"
-    ],
-    "ModalOverlay": [
-      "modal"
-    ],
-    "NavigationTree": [
-      "navigation"
-    ],
-    "NavigationTreeHeader": [
-      "navigation"
-    ],
-    "NavigationTreeItem": [
-      "navigation"
-    ],
-    "NavigationTreeItemContent": [
-      "navigation"
-    ],
-    "NavigationTreeSection": [
-      "navigation"
-    ],
-    "NumberField": [
-      "number"
-    ],
-    "OverlayArrow": [
-      "popover"
-    ],
-    "Popover": [
-      "popover"
-    ],
-    "Pressable": [
-      "providers",
-      "refs"
-    ],
-    "PreviewTrigger": [
-      "preview"
-    ],
-    "ProgressBar": [
-      "meter"
-    ],
-    "Provider": [
-      "providers"
-    ],
-    "Radio": [
-      "radio"
-    ],
-    "RadioButton": [
-      "radio"
-    ],
-    "RadioField": [
-      "radio"
-    ],
-    "RadioGroup": [
-      "radio"
-    ],
-    "RangeCalendar": [
-      "daterange"
-    ],
-    "ResizableTableContainer": [
-      "table"
-    ],
-    "RouterProvider": [
-      "providers"
-    ],
-    "Row": [
-      "table"
-    ],
-    "SSRProvider": [
-      "providers"
-    ],
-    "SearchField": [
-      "search"
-    ],
-    "Section": [
-      "section"
-    ],
-    "Select": [
-      "select"
-    ],
-    "SelectValue": [
-      "select"
-    ],
-    "SelectionIndicator": [
-      "toggle"
-    ],
-    "Separator": [
-      "menu"
-    ],
-    "SharedElement": [
-      "shared"
-    ],
-    "SharedElementTransition": [
-      "shared"
-    ],
-    "Slider": [
-      "slider"
-    ],
-    "SliderFill": [
-      "slider"
-    ],
-    "SliderOutput": [
-      "slider"
-    ],
-    "SliderThumb": [
-      "slider"
-    ],
-    "SliderTrack": [
-      "slider"
-    ],
-    "SubmenuTrigger": [
-      "menu"
-    ],
-    "Switch": [
-      "switch"
-    ],
-    "SwitchButton": [
-      "switch"
-    ],
-    "SwitchField": [
-      "switch"
-    ],
-    "Tab": [
-      "tabs"
-    ],
-    "TabList": [
-      "tabs"
-    ],
-    "TabPanel": [
-      "tabs"
-    ],
-    "TabPanels": [
-      "tabs"
-    ],
-    "Table": [
-      "table"
-    ],
-    "TableBody": [
-      "table"
-    ],
-    "TableFooter": [
-      "table"
-    ],
-    "TableHeader": [
-      "table"
-    ],
-    "TableLoadMoreItem": [
-      "loaders"
-    ],
-    "Tabs": [
-      "tabs"
-    ],
-    "Tag": [
-      "tags"
-    ],
-    "TagGroup": [
-      "tags"
-    ],
-    "TagList": [
-      "tags"
-    ],
-    "Text": [
-      "datepicker",
-      "textfield"
-    ],
-    "TextArea": [
-      "textarea"
-    ],
-    "TextField": [
-      "textfield",
-      "stately"
-    ],
-    "TimeField": [
-      "datefield"
-    ],
-    "ToggleButton": [
-      "toggle",
-      "stately"
-    ],
-    "ToggleButtonGroup": [
-      "toggle"
-    ],
-    "Token": [
-      "tokenfield"
-    ],
-    "TokenField": [
-      "tokenfield"
-    ],
-    "TokenInput": [
-      "tokenfield"
-    ],
-    "Toolbar": [
-      "toolbar"
-    ],
-    "Tooltip": [
-      "tooltip"
-    ],
-    "TooltipTrigger": [
-      "tooltip"
-    ],
-    "Tree": [
-      "tree"
-    ],
-    "TreeHeader": [
-      "tree"
-    ],
-    "TreeItem": [
-      "tree"
-    ],
-    "TreeItemContent": [
-      "tree"
-    ],
-    "TreeLoadMoreItem": [
-      "loaders"
-    ],
-    "TreeSection": [
-      "tree"
-    ],
-    "UNSTABLE_Toast": [
-      "toast"
-    ],
-    "UNSTABLE_ToastContent": [
-      "toast"
-    ],
-    "UNSTABLE_ToastList": [
-      "toast"
-    ],
-    "UNSTABLE_ToastRegion": [
-      "toast"
-    ],
-    "Virtualizer": [
-      "virtual-list",
-      "virtual-grid",
-      "virtual-waterfall",
-      "virtual-table"
-    ],
-    "VisuallyHidden": [
-      "providers"
-    ]
+    "Autocomplete": ["autocomplete"],
+    "Breadcrumb": ["breadcrumbs"],
+    "Breadcrumbs": ["breadcrumbs"],
+    "Button": ["combobox", "button", "stately"],
+    "Calendar": ["datepicker"],
+    "CalendarCell": ["datepicker"],
+    "CalendarGrid": ["datepicker"],
+    "CalendarGridBody": ["datepicker"],
+    "CalendarGridHeader": ["datepicker"],
+    "CalendarHeaderCell": ["datepicker"],
+    "CalendarHeading": ["calendar"],
+    "CalendarMonthPicker": ["calendar"],
+    "CalendarYearPicker": ["calendar"],
+    "Cell": ["table"],
+    "Checkbox": ["checkbox"],
+    "CheckboxButton": ["checkbox"],
+    "CheckboxField": ["checkbox"],
+    "CheckboxGroup": ["checkbox"],
+    "Collection": ["listbox"],
+    "CollectionBuilder": ["listbox"],
+    "ColorArea": ["colorarea"],
+    "ColorField": ["colorfield"],
+    "ColorPicker": ["colorswatch"],
+    "ColorSlider": ["colorslider"],
+    "ColorSwatch": ["colorswatch"],
+    "ColorSwatchPicker": ["colorswatch"],
+    "ColorSwatchPickerItem": ["colorswatch"],
+    "ColorThumb": ["colorarea"],
+    "ColorWheel": ["colorwheel"],
+    "ColorWheelTrack": ["colorwheel"],
+    "Column": ["table"],
+    "ColumnResizer": ["table"],
+    "ComboBox": ["combobox"],
+    "ComboBoxValue": ["combobox"],
+    "DateField": ["datefield"],
+    "DateInput": ["datepicker"],
+    "DatePicker": ["datepicker"],
+    "DateRangePicker": ["daterange"],
+    "DateSegment": ["datepicker"],
+    "DefaultCollectionRenderer": ["listbox"],
+    "Dialog": ["popover", "modal"],
+    "DialogTrigger": ["popover", "modal"],
+    "Disclosure": ["disclosure"],
+    "DisclosureGroup": ["disclosure"],
+    "DisclosurePanel": ["disclosure"],
+    "DropIndicator": ["dnd"],
+    "DropZone": ["dnd"],
+    "FieldError": ["textfield", "form"],
+    "FileTrigger": ["file"],
+    "Focusable": ["providers", "refs"],
+    "Form": ["form"],
+    "GridList": ["dnd", "gridlist"],
+    "GridListHeader": ["gridlist"],
+    "GridListItem": ["dnd", "gridlist"],
+    "GridListLoadMoreItem": ["loaders"],
+    "GridListSection": ["gridlist"],
+    "Group": ["datepicker", "number"],
+    "Header": ["menu"],
+    "Heading": ["popover", "disclosure"],
+    "I18nProvider": ["providers"],
+    "Input": ["combobox", "textfield", "stately"],
+    "Keyboard": ["menu"],
+    "Label": ["select", "textfield", "stately"],
+    "Link": ["breadcrumbs"],
+    "ListBox": ["select", "listbox", "stately"],
+    "ListBoxItem": ["select", "listbox", "stately"],
+    "ListBoxLoadMoreItem": ["loaders"],
+    "ListBoxSection": ["select", "listbox"],
+    "Menu": ["menu"],
+    "MenuItem": ["menu"],
+    "MenuLoadMoreItem": ["loaders"],
+    "MenuSection": ["menu"],
+    "MenuTrigger": ["menu"],
+    "Meter": ["meter"],
+    "Modal": ["modal"],
+    "ModalOverlay": ["modal"],
+    "NavigationTree": ["navigation"],
+    "NavigationTreeHeader": ["navigation"],
+    "NavigationTreeItem": ["navigation"],
+    "NavigationTreeItemContent": ["navigation"],
+    "NavigationTreeSection": ["navigation"],
+    "NumberField": ["number"],
+    "OverlayArrow": ["popover"],
+    "Popover": ["popover"],
+    "Pressable": ["providers", "refs"],
+    "PreviewTrigger": ["preview"],
+    "ProgressBar": ["meter"],
+    "Provider": ["providers"],
+    "Radio": ["radio"],
+    "RadioButton": ["radio"],
+    "RadioField": ["radio"],
+    "RadioGroup": ["radio"],
+    "RangeCalendar": ["daterange"],
+    "ResizableTableContainer": ["table"],
+    "RouterProvider": ["providers"],
+    "Row": ["table"],
+    "SSRProvider": ["providers"],
+    "SearchField": ["search"],
+    "Section": ["section"],
+    "Select": ["select"],
+    "SelectValue": ["select"],
+    "SelectionIndicator": ["toggle"],
+    "Separator": ["menu"],
+    "SharedElement": ["shared"],
+    "SharedElementTransition": ["shared"],
+    "Slider": ["slider"],
+    "SliderFill": ["slider"],
+    "SliderOutput": ["slider"],
+    "SliderThumb": ["slider"],
+    "SliderTrack": ["slider"],
+    "SubmenuTrigger": ["menu"],
+    "Switch": ["switch"],
+    "SwitchButton": ["switch"],
+    "SwitchField": ["switch"],
+    "Tab": ["tabs"],
+    "TabList": ["tabs"],
+    "TabPanel": ["tabs"],
+    "TabPanels": ["tabs"],
+    "Table": ["table"],
+    "TableBody": ["table"],
+    "TableFooter": ["table"],
+    "TableHeader": ["table"],
+    "TableLoadMoreItem": ["loaders"],
+    "Tabs": ["tabs"],
+    "Tag": ["tags"],
+    "TagGroup": ["tags"],
+    "TagList": ["tags"],
+    "Text": ["datepicker", "textfield"],
+    "TextArea": ["textarea"],
+    "TextField": ["textfield", "stately"],
+    "TimeField": ["datefield"],
+    "ToggleButton": ["toggle", "stately"],
+    "ToggleButtonGroup": ["toggle"],
+    "Token": ["tokenfield"],
+    "TokenField": ["tokenfield"],
+    "TokenInput": ["tokenfield"],
+    "Toolbar": ["toolbar"],
+    "Tooltip": ["tooltip"],
+    "TooltipTrigger": ["tooltip"],
+    "Tree": ["tree"],
+    "TreeHeader": ["tree"],
+    "TreeItem": ["tree"],
+    "TreeItemContent": ["tree"],
+    "TreeLoadMoreItem": ["loaders"],
+    "TreeSection": ["tree"],
+    "UNSTABLE_Toast": ["toast"],
+    "UNSTABLE_ToastContent": ["toast"],
+    "UNSTABLE_ToastList": ["toast"],
+    "UNSTABLE_ToastRegion": ["toast"],
+    "Virtualizer": ["virtual-list", "virtual-grid", "virtual-waterfall", "virtual-table"],
+    "VisuallyHidden": ["providers"]
   },
   "supportExports": {
     "DEFAULT_SLOT": "Context slot symbol",
@@ -656,13 +325,7 @@
     },
     {
       "name": "popover",
-      "components": [
-        "DialogTrigger",
-        "Popover",
-        "Dialog",
-        "Heading",
-        "OverlayArrow"
-      ],
+      "components": ["DialogTrigger", "Popover", "Dialog", "Heading", "OverlayArrow"],
       "status": "pass",
       "driver": "Playwriter",
       "checks": [
@@ -677,14 +340,7 @@
     },
     {
       "name": "select",
-      "components": [
-        "Select",
-        "SelectValue",
-        "ListBox",
-        "ListBoxItem",
-        "ListBoxSection",
-        "Label"
-      ],
+      "components": ["Select", "SelectValue", "ListBox", "ListBoxItem", "ListBoxSection", "Label"],
       "status": "pass",
       "driver": "Playwriter",
       "checks": [
@@ -700,12 +356,7 @@
     },
     {
       "name": "combobox",
-      "components": [
-        "ComboBox",
-        "ComboBoxValue",
-        "Input",
-        "Button"
-      ],
+      "components": ["ComboBox", "ComboBoxValue", "Input", "Button"],
       "status": "pass",
       "driver": "Playwriter",
       "checks": [
@@ -721,12 +372,7 @@
     },
     {
       "name": "dnd",
-      "components": [
-        "GridList",
-        "GridListItem",
-        "DropIndicator",
-        "DropZone"
-      ],
+      "components": ["GridList", "GridListItem", "DropIndicator", "DropZone"],
       "status": "pass",
       "driver": "Playwriter",
       "checks": [
@@ -766,40 +412,21 @@
     },
     {
       "name": "button",
-      "components": [
-        "Button"
-      ],
+      "components": ["Button"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "pointer press",
-        "keyboard Space press",
-        "disabled button"
-      ]
+      "checks": ["pointer press", "keyboard Space press", "disabled button"]
     },
     {
       "name": "toggle",
-      "components": [
-        "ToggleButton",
-        "ToggleButtonGroup",
-        "SelectionIndicator"
-      ],
+      "components": ["ToggleButton", "ToggleButtonGroup", "SelectionIndicator"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "independent toggle",
-        "group selects Bold",
-        "keyboard selects Italic"
-      ]
+      "checks": ["independent toggle", "group selects Bold", "keyboard selects Italic"]
     },
     {
       "name": "checkbox",
-      "components": [
-        "Checkbox",
-        "CheckboxGroup",
-        "CheckboxField",
-        "CheckboxButton"
-      ],
+      "components": ["Checkbox", "CheckboxGroup", "CheckboxField", "CheckboxButton"],
       "status": "pass",
       "driver": "Playwriter",
       "checks": [
@@ -810,170 +437,84 @@
     },
     {
       "name": "radio",
-      "components": [
-        "RadioGroup",
-        "Radio",
-        "RadioField",
-        "RadioButton"
-      ],
+      "components": ["RadioGroup", "Radio", "RadioField", "RadioButton"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "composed RadioButton selects"
-      ]
+      "checks": ["composed RadioButton selects"]
     },
     {
       "name": "switch",
-      "components": [
-        "Switch",
-        "SwitchField",
-        "SwitchButton"
-      ],
+      "components": ["Switch", "SwitchField", "SwitchButton"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "composed SwitchButton toggles"
-      ]
+      "checks": ["composed SwitchButton toggles"]
     },
     {
       "name": "textfield",
-      "components": [
-        "TextField",
-        "Input",
-        "Label",
-        "Text",
-        "FieldError"
-      ],
+      "components": ["TextField", "Input", "Label", "Text", "FieldError"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "focus Name",
-        "controlled input",
-        "description association"
-      ]
+      "checks": ["focus Name", "controlled input", "description association"]
     },
     {
       "name": "textarea",
-      "components": [
-        "TextArea"
-      ],
+      "components": ["TextArea"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "focus textarea",
-        "multiline input"
-      ]
+      "checks": ["focus textarea", "multiline input"]
     },
     {
       "name": "search",
-      "components": [
-        "SearchField"
-      ],
+      "components": ["SearchField"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "focus search",
-        "input updates",
-        "clear search"
-      ]
+      "checks": ["focus search", "input updates", "clear search"]
     },
     {
       "name": "number",
-      "components": [
-        "NumberField",
-        "Group"
-      ],
+      "components": ["NumberField", "Group"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "increment button",
-        "decrement button",
-        "ArrowUp spinbutton"
-      ]
+      "checks": ["increment button", "decrement button", "ArrowUp spinbutton"]
     },
     {
       "name": "slider",
-      "components": [
-        "Slider",
-        "SliderTrack",
-        "SliderThumb",
-        "SliderFill",
-        "SliderOutput"
-      ],
+      "components": ["Slider", "SliderTrack", "SliderThumb", "SliderFill", "SliderOutput"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "keyboard increments slider",
-        "End sets maximum"
-      ]
+      "checks": ["keyboard increments slider", "End sets maximum"]
     },
     {
       "name": "meter",
-      "components": [
-        "Meter",
-        "ProgressBar"
-      ],
+      "components": ["Meter", "ProgressBar"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "meter exposes value",
-        "progress exposes value"
-      ]
+      "checks": ["meter exposes value", "progress exposes value"]
     },
     {
       "name": "tabs",
-      "components": [
-        "Tabs",
-        "TabList",
-        "Tab",
-        "TabPanels",
-        "TabPanel"
-      ],
+      "components": ["Tabs", "TabList", "Tab", "TabPanels", "TabPanel"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "pointer changes tab",
-        "ArrowLeft returns to Alpha"
-      ]
+      "checks": ["pointer changes tab", "ArrowLeft returns to Alpha"]
     },
     {
       "name": "disclosure",
-      "components": [
-        "Disclosure",
-        "DisclosureGroup",
-        "DisclosurePanel",
-        "Heading"
-      ],
+      "components": ["Disclosure", "DisclosureGroup", "DisclosurePanel", "Heading"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "expand panel",
-        "collapse with Enter"
-      ]
+      "checks": ["expand panel", "collapse with Enter"]
     },
     {
       "name": "modal",
-      "components": [
-        "Modal",
-        "ModalOverlay",
-        "Dialog",
-        "DialogTrigger"
-      ],
+      "components": ["Modal", "ModalOverlay", "Dialog", "DialogTrigger"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "open modal",
-        "Escape closes modal",
-        "reopen modal",
-        "close button"
-      ]
+      "checks": ["open modal", "Escape closes modal", "reopen modal", "close button"]
     },
     {
       "name": "tooltip",
-      "components": [
-        "Tooltip",
-        "TooltipTrigger"
-      ],
+      "components": ["Tooltip", "TooltipTrigger"],
       "status": "pass",
       "driver": "Playwriter",
       "checks": [
@@ -985,40 +526,24 @@
     },
     {
       "name": "preview",
-      "components": [
-        "PreviewTrigger"
-      ],
+      "components": ["PreviewTrigger"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "hover preview",
-        "Escape hides preview"
-      ]
+      "checks": ["hover preview", "Escape hides preview"]
     },
     {
       "name": "breadcrumbs",
-      "components": [
-        "Breadcrumbs",
-        "Breadcrumb",
-        "Link"
-      ],
+      "components": ["Breadcrumbs", "Breadcrumb", "Link"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "link navigation"
-      ]
+      "checks": ["link navigation"]
     },
     {
       "name": "toolbar",
-      "components": [
-        "Toolbar"
-      ],
+      "components": ["Toolbar"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "keyboard toolbar navigation",
-        "toggle in toolbar"
-      ]
+      "checks": ["keyboard toolbar navigation", "toggle in toolbar"]
     },
     {
       "name": "listbox",
@@ -1032,51 +557,28 @@
       ],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "select Alpha",
-        "multiple select Beta",
-        "Home keyboard focus"
-      ]
+      "checks": ["select Alpha", "multiple select Beta", "Home keyboard focus"]
     },
     {
       "name": "section",
-      "components": [
-        "Section"
-      ],
+      "components": ["Section"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "legacy section selection"
-      ]
+      "checks": ["legacy section selection"]
     },
     {
       "name": "gridlist",
-      "components": [
-        "GridList",
-        "GridListItem",
-        "GridListHeader",
-        "GridListSection"
-      ],
+      "components": ["GridList", "GridListItem", "GridListHeader", "GridListSection"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "select Alpha row",
-        "select Beta checkbox via label"
-      ]
+      "checks": ["select Alpha row", "select Beta checkbox via label"]
     },
     {
       "name": "tags",
-      "components": [
-        "TagGroup",
-        "TagList",
-        "Tag"
-      ],
+      "components": ["TagGroup", "TagList", "Tag"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "remove middle tag",
-        "remove first tag"
-      ]
+      "checks": ["remove middle tag", "remove first tag"]
     },
     {
       "name": "table",
@@ -1103,19 +605,10 @@
     },
     {
       "name": "tree",
-      "components": [
-        "Tree",
-        "TreeItem",
-        "TreeItemContent",
-        "TreeHeader",
-        "TreeSection"
-      ],
+      "components": ["Tree", "TreeItem", "TreeItemContent", "TreeHeader", "TreeSection"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "expand tree folder",
-        "keyboard collapse"
-      ]
+      "checks": ["expand tree folder", "keyboard collapse"]
     },
     {
       "name": "navigation",
@@ -1128,149 +621,81 @@
       ],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "expand navigation folder",
-        "activate child link"
-      ]
+      "checks": ["expand navigation folder", "activate child link"]
     },
     {
       "name": "datefield",
-      "components": [
-        "DateField",
-        "TimeField"
-      ],
+      "components": ["DateField", "TimeField"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "edit birthday day",
-        "edit time minute"
-      ]
+      "checks": ["edit birthday day", "edit time minute"]
     },
     {
       "name": "daterange",
-      "components": [
-        "DateRangePicker",
-        "RangeCalendar"
-      ],
+      "components": ["DateRangePicker", "RangeCalendar"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "open range calendar",
-        "choose range start",
-        "choose range end"
-      ]
+      "checks": ["open range calendar", "choose range start", "choose range end"]
     },
     {
       "name": "calendar",
-      "components": [
-        "CalendarMonthPicker",
-        "CalendarYearPicker",
-        "CalendarHeading"
-      ],
+      "components": ["CalendarMonthPicker", "CalendarYearPicker", "CalendarHeading"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "change month picker",
-        "change year picker"
-      ]
+      "checks": ["change month picker", "change year picker"]
     },
     {
       "name": "autocomplete",
-      "components": [
-        "Autocomplete"
-      ],
+      "components": ["Autocomplete"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "focus filter",
-        "filter collection",
-        "activate filtered item"
-      ]
+      "checks": ["focus filter", "filter collection", "activate filtered item"]
     },
     {
       "name": "tokenfield",
-      "components": [
-        "TokenField",
-        "TokenInput",
-        "Token"
-      ],
+      "components": ["TokenField", "TokenInput", "Token"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "focus token input",
-        "append text after token",
-        "type alongside token"
-      ]
+      "checks": ["focus token input", "append text after token", "type alongside token"]
     },
     {
       "name": "colorfield",
-      "components": [
-        "ColorField"
-      ],
+      "components": ["ColorField"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "focus color input",
-        "enter blue",
-        "commit blue"
-      ]
+      "checks": ["focus color input", "enter blue", "commit blue"]
     },
     {
       "name": "colorarea",
-      "components": [
-        "ColorArea",
-        "ColorThumb"
-      ],
+      "components": ["ColorArea", "ColorThumb"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "keyboard changes saturation"
-      ]
+      "checks": ["keyboard changes saturation"]
     },
     {
       "name": "colorslider",
-      "components": [
-        "ColorSlider"
-      ],
+      "components": ["ColorSlider"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "keyboard changes hue"
-      ]
+      "checks": ["keyboard changes hue"]
     },
     {
       "name": "colorwheel",
-      "components": [
-        "ColorWheel",
-        "ColorWheelTrack"
-      ],
+      "components": ["ColorWheel", "ColorWheelTrack"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "keyboard changes wheel hue"
-      ]
+      "checks": ["keyboard changes wheel hue"]
     },
     {
       "name": "colorswatch",
-      "components": [
-        "ColorSwatch",
-        "ColorSwatchPicker",
-        "ColorSwatchPickerItem",
-        "ColorPicker"
-      ],
+      "components": ["ColorSwatch", "ColorSwatchPicker", "ColorSwatchPickerItem", "ColorPicker"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "open color picker",
-        "select blue swatch"
-      ]
+      "checks": ["open color picker", "select blue swatch"]
     },
     {
       "name": "form",
-      "components": [
-        "Form",
-        "FieldError"
-      ],
+      "components": ["Form", "FieldError"],
       "status": "pass",
       "driver": "computer-use-linux",
       "checks": [
@@ -1283,14 +708,10 @@
     },
     {
       "name": "file",
-      "components": [
-        "FileTrigger"
-      ],
+      "components": ["FileTrigger"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "file chooser selection"
-      ]
+      "checks": ["file chooser selection"]
     },
     {
       "name": "toast",
@@ -1302,23 +723,14 @@
       ],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "enqueue toast",
-        "dismiss toast"
-      ]
+      "checks": ["enqueue toast", "dismiss toast"]
     },
     {
       "name": "shared",
-      "components": [
-        "SharedElementTransition",
-        "SharedElement"
-      ],
+      "components": ["SharedElementTransition", "SharedElement"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "move shared element",
-        "move it back"
-      ]
+      "checks": ["move shared element", "move it back"]
     },
     {
       "name": "providers",
@@ -1351,15 +763,11 @@
       ],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "all five loading indicators render"
-      ]
+      "checks": ["all five loading indicators render"]
     },
     {
       "name": "virtual-list",
-      "components": [
-        "Virtualizer"
-      ],
+      "components": ["Virtualizer"],
       "status": "pass",
       "driver": "Playwriter",
       "checks": [
@@ -1370,9 +778,7 @@
     },
     {
       "name": "virtual-grid",
-      "components": [
-        "Virtualizer"
-      ],
+      "components": ["Virtualizer"],
       "status": "pass",
       "driver": "Playwriter",
       "checks": [
@@ -1383,9 +789,7 @@
     },
     {
       "name": "virtual-waterfall",
-      "components": [
-        "Virtualizer"
-      ],
+      "components": ["Virtualizer"],
       "status": "pass",
       "driver": "Playwriter",
       "checks": [
@@ -1396,9 +800,7 @@
     },
     {
       "name": "virtual-table",
-      "components": [
-        "Virtualizer"
-      ],
+      "components": ["Virtualizer"],
       "status": "pass",
       "driver": "Playwriter",
       "checks": [
@@ -1409,16 +811,10 @@
     },
     {
       "name": "refs",
-      "components": [
-        "Pressable",
-        "Focusable"
-      ],
+      "components": ["Pressable", "Focusable"],
       "status": "pass",
       "driver": "Playwriter",
-      "checks": [
-        "function component press ref",
-        "function component focus ref"
-      ]
+      "checks": ["function component press ref", "function component focus ref"]
     },
     {
       "name": "stately",

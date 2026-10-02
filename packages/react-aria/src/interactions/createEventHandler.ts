@@ -28,10 +28,15 @@ export function createEventHandler<T extends SyntheticEvent>(
     let shouldStopPropagation = true;
     // Preact passes native DOM events. Their fields are enumerable on the
     // prototype, so object spread alone drops key, target, and currentTarget.
-    // Copy inherited fields while the event is being dispatched.
+    // Events constructed with defineProperty may also have non-enumerable own
+    // fields. Copy both sets of fields while the event is being dispatched.
     let eventProps: Record<string, unknown> = {};
+    let keys = new Set(Object.getOwnPropertyNames(e));
     for (let key in e) {
-      let value = e[key];
+      keys.add(key);
+    }
+    for (let key of keys) {
+      let value = Reflect.get(e, key);
       eventProps[key] = typeof value === 'function' ? value.bind(e) : value;
     }
     let event: BaseEvent<T> = {

@@ -10,7 +10,6 @@
  * governing
  */
 
-import type React from 'react';
 import {announce} from '../live-announcer/LiveAnnouncer';
 import {AriaLabelingProps, DOMAttributes, FocusableProps} from '@react-types/shared';
 import {
@@ -35,6 +34,7 @@ import {
   TokenFieldState,
   TokenFieldValue
 } from 'react-stately/useTokenFieldState';
+import type React from 'react';
 import {scrollRectIntoView} from '../utils/scrollIntoView';
 import {useEvent} from '../utils/useEvent';
 import {useField} from '../label/useField';

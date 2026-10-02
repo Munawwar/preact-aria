@@ -270,7 +270,9 @@ export class BaseNode<T> {
  * Collection Node which is copied on write.
  */
 export class ElementNode<T> extends BaseNode<T> {
-  nodeType = 8; // COMMENT_NODE (we'd use ELEMENT_NODE but React DevTools will fail to get its dimensions)
+  // These are collection elements. Preact skips comment nodes when advancing
+  // its insertion cursor, so marking items as comments breaks keyed reordering.
+  nodeType = 1; // ELEMENT_NODE
   node: CollectionNode<T> | null;
   isMutated = true;
   private _index: number = 0;

@@ -8,6 +8,26 @@
   ],
   "patches": [
     {
+      "path": "packages/react-aria-components/test/TokenField.composition.browser.test.tsx",
+      "kind": "test",
+      "reason": "Poll the DOM and controlled model together instead of capturing a stale expected model value before the asynchronous update."
+    },
+    {
+      "path": "packages/@react-spectrum/ai/test/Chat.browser.test.tsx",
+      "kind": "test",
+      "reason": "Wait for native asynchronous focus using Vitest's browser assertions; retain the same focus targets and keyboard interactions."
+    },
+    {
+      "path": "packages/react-aria-components/test/Collection.browser.test.tsx",
+      "kind": "test",
+      "reason": "Regressions for keyed insertion and reordering while preserving selection."
+    },
+    {
+      "path": "packages/react-aria-components/test/Button.browser.test.tsx",
+      "kind": "test",
+      "reason": "Regressions for native and non-enumerable keyboard event fields."
+    },
+    {
       "path": "packages/react-aria-components/exports/index.ts",
       "kind": "entry",
       "reason": "Allow native Preact SSR without the client-only marker package."
@@ -30,7 +50,7 @@
     {
       "path": "packages/react-aria/src/collections/Document.ts",
       "kind": "runtime",
-      "reason": "Implement childNodes, remove and createElementNS needed by Preact portals."
+      "reason": "Implement childNodes, remove and createElementNS for Preact portals, and identify collection items as elements so keyed insertion preserves order."
     },
     {
       "path": "packages/react-aria/src/dnd/useDrag.ts",
@@ -45,7 +65,7 @@
     {
       "path": "packages/react-aria/src/interactions/createEventHandler.ts",
       "kind": "runtime",
-      "reason": "Preserve inherited native event fields and bind native methods when wrapping events."
+      "reason": "Preserve inherited native fields and non-enumerable own event fields, and bind native methods when wrapping events."
     },
     {
       "path": "packages/react-aria/src/interactions/useFocusable.tsx",

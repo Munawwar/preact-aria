@@ -57,6 +57,7 @@
     "test:mcp": "yarn build:s2-docs && yarn build:mcp && node packages/dev/mcp/scripts/smoke-list-pages.mjs",
     "test": "cross-env STRICT_MODE=1 VIRT_ON=1 yarn jest",
     "test:browser": "yarn playwright install && vitest run --config=vitest.browser.config.ts",
+    "test:browser:preact": "yarn playwright install && vitest run --config=vitest.preact.browser.config.ts",
     "test:browser:watch": "yarn playwright install && vitest --config=vitest.browser.config.ts",
     "test:lint": "ls packages/**/*.test-lint.js | xargs -n 1 node",
     "test-loose": "cross-env VIRT_ON=1 yarn jest",

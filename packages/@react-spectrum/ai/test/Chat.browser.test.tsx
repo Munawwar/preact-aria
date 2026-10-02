@@ -210,18 +210,18 @@ describeOrSkip('Chat browser', () => {
       );
 
       let gridlist = container.querySelector('[role=grid]') as HTMLElement;
-      let rows = gridlist.querySelectorAll('[role="row"]');
+      let rows = gridlist.querySelectorAll<HTMLElement>('[role="row"]');
 
       await userEvent.click(rows[0]);
-      expect(rows[0]).toHaveFocus();
+      await expect.element(rows[0]).toHaveFocus();
       expect(rows[0]).toHaveTextContent('Third message');
 
       await userEvent.keyboard('{ArrowUp}');
-      expect(rows[1]).toHaveFocus();
+      await expect.element(rows[1]).toHaveFocus();
       expect(rows[1]).toHaveTextContent('Second message');
 
       await userEvent.keyboard('{ArrowDown}');
-      expect(rows[0]).toHaveFocus();
+      await expect.element(rows[0]).toHaveFocus();
       expect(rows[0]).toHaveTextContent('Third message');
     });
   });
