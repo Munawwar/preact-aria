@@ -2,4 +2,5 @@ vendor/
 artifacts/
 *.tgz
 examples/hydration.html
+examples/compatibility.html
 examples/generated/

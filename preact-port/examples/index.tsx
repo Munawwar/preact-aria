@@ -257,6 +257,7 @@ function App() {
           <p>Adobe’s examples, running on Preact 11</p>
         </div>
         <div className="header-actions">
+          <a href="./compatibility.html">Compatibility guide</a>
           <a href="https://github.com/Munawwar/preact-aria">GitHub</a>
         </div>
       </header>

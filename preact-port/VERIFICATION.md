@@ -265,3 +265,13 @@ The original full Jest and SSR commands were attempted on both checkouts. They a
 The original collection comment-node choice worked around React DevTools dimension inspection. A future dual React/Preact implementation must revisit that behavior and the Preact-specific SSR provider; this task does not claim restored React support.
 
 Environment: Node 22.23.3, Preact 11.0.0, Vitest 4.0.18, Playwright 1.57.0, Linux Mint 22.3. Pinned browser builds: Chromium 143 / 1200, Firefox 144 / 1497, WebKit 2227. This host lacked libavif16; unmodified distro libavif/libgav1/libyuv libraries were extracted into Playwright's WebKit runtime library directories without altering repository code or browser binaries. Reproduction commands are in [README.md](./README.md#run-the-upstream-browser-tests).
+
+## Static compatibility guide — October 3, 2026
+
+The compatibility guide is generated from `COMPATIBILITY.md` at `/compatibility.html`, alongside the existing fixture catalog. It uses the same shell styling, section navigation, keyboard skip link, and responsive tables. Its production HTML is approximately 27 KB including styles, with no client JavaScript. Adobe's documentation is linked rather than copied.
+
+The reset revision's committed site predates its expanded example inventory. Rebuilding that inventory without optimization produced approximately 124 MB. Production minification and an explicit shared Aria/Stately runtime reduced the clean site to approximately 21 MB while retaining 347 pages / 1,026 upstream variants. The build contains no Storybook manager or replicated documentation website.
+
+Fresh Playwriter checks in headless Chrome for Testing passed nine guide navigation/rendering checks, including first-Tab/Enter focus skipping, direct reload, section links, returning to examples, and a 390px viewport without document horizontal overflow. All eight gallery applications rendered without an error boundary or browser error. The existing priority interaction batch passed 25 observations across Menu/submenus, Popover, Select, ComboBox, and DatePicker; the Kanban batch passed six observations including native pointer and keyboard dragging. These are representative checks of the optimized build, not exhaustive interaction coverage of all variants.
+
+The library/export audit, nine standalone Node tests, strict consumer checks in Bundler/NodeNext modes, formatting, lint, and upstream source audit passed. The component implementation was not changed for this guide. Local evidence lives in ignored `artifacts/compatibility-page.json`, `artifacts/compatibility-gallery.json`, and `artifacts/upstream-interactions.json`; the reproducible guide browser script is `test/compatibility.playwriter.js`.

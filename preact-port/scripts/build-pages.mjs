@@ -16,7 +16,6 @@ run(
     'pages',
     '--no-cache',
     '--no-scope-hoist',
-    '--no-optimize',
     '--no-autoinstall'
   ],
   {cwd: port}

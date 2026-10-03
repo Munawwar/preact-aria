@@ -4,7 +4,7 @@
 
 WARNING: This is a slopfork of React Aria, it hasn't been tested yet.
 
-[Preact compatibility guide](./preact-port/COMPATIBILITY.md) — setup and differences from [React Aria's documentation](https://react-aria.adobe.com/).
+[Preact compatibility guide](https://munawwar.github.io/preact-aria/compatibility.html) — setup and differences from [React Aria's documentation](https://react-aria.adobe.com/). [Guide source](./preact-port/COMPATIBILITY.md).
 
 ##  [React Spectrum Libraries](https://react-spectrum.adobe.com/)
 

@@ -4,7 +4,7 @@ Experimental source port of Adobe React Aria Components and its Aria/Stately dep
 
 Upstream source: [adobe/react-spectrum at `57c56b8`](https://github.com/adobe/react-spectrum/commit/57c56b8), whose component package declares version 1.21.1. This fork is not an Adobe release.
 
-Read the [Preact compatibility guide](./COMPATIBILITY.md) for import changes, component interfaces, copied styling examples, React-specific features, and known limits. Use [Adobe's documentation](https://react-aria.adobe.com/) for the full component reference.
+Read the [Preact compatibility guide](https://munawwar.github.io/preact-aria/compatibility.html) for import changes, component interfaces, copied styling examples, React-specific features, and known limits. Use [Adobe's documentation](https://react-aria.adobe.com/) for the full component reference. The guide is generated from [COMPATIBILITY.md](./COMPATIBILITY.md) as a static HTML page with no client JavaScript.
 
 ## Install in your app
 
@@ -43,7 +43,7 @@ npm run build:examples
 python3 -m http.server 4100 --directory artifacts/site
 ```
 
-Open `http://localhost:4100/?example=menu`. The existing shell now contains **347 pages / 1,026 upstream variants**. Search the sidebar, choose a group, then choose a use case. The first keyboard stop is **Skip to example**: press Tab and Enter to bypass the sidebar. `npm start` runs the Parcel development server. Hydration and utility diagnostics remain at `/hydration.html` and `/utilities.html`.
+Open `http://localhost:4100/?example=menu`. The existing shell now contains **347 pages / 1,026 upstream variants**. Search the sidebar, choose a group, then choose a use case. The first keyboard stop is **Skip to example**: press Tab and Enter to bypass the sidebar. The header links to the compatibility guide at `/compatibility.html`, which has section navigation and its own keyboard skip link. `npm start` runs the Parcel development server. Hydration and utility diagnostics remain at `/hydration.html` and `/utilities.html`.
 
 ## Upstream examples and use cases
 

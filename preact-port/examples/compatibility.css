@@ -1,0 +1,107 @@
+.compatibility-content {
+  min-width: 0;
+  max-width: 960px;
+  padding: clamp(20px, 4vw, 40px);
+  border: 1px solid light-dark(#dddde6, #3b3b47);
+  border-radius: 16px;
+  background: light-dark(#fff, #222229);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.compatibility-content h1 {
+  margin-top: 8px;
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+.compatibility-content h2 {
+  margin: 48px 0 16px;
+  padding-top: 24px;
+  border-top: 1px solid light-dark(#e5e5ed, #40404c);
+  font-size: 24px;
+}
+.compatibility-content h3 {
+  font-size: 19px;
+  margin-top: 28px;
+}
+.compatibility-content h1,
+.compatibility-content h2,
+.compatibility-content h3 {
+  scroll-margin-top: 24px;
+}
+.compatibility-content a {
+  color: light-dark(#5142c2, #c0b4ff);
+  text-underline-offset: 3px;
+}
+.compatibility-content code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: light-dark(#f0eef8, #32303d);
+  font-size: 0.88em;
+}
+.compatibility-content pre {
+  overflow-x: auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: light-dark(#f4f3fa, #19191f);
+  line-height: 1.5;
+}
+.compatibility-content pre code {
+  padding: 0;
+  background: none;
+}
+.guide-table {
+  overflow-x: auto;
+  border: 1px solid light-dark(#dddde6, #40404c);
+  border-radius: 10px;
+}
+.guide-table table {
+  width: 100%;
+  min-width: 540px;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.guide-table th,
+.guide-table td {
+  padding: 12px 16px;
+  text-align: start;
+  vertical-align: top;
+  border-bottom: 1px solid light-dark(#e5e5ed, #40404c);
+}
+.guide-table th {
+  background: light-dark(#f5f4fb, #30303a);
+}
+.guide-table tr:last-child td {
+  border-bottom: 0;
+}
+.guide-table td:first-child {
+  min-width: 150px;
+}
+.guide-sidebar a {
+  font-size: 13px;
+}
+:where(.compatibility-content, .guide-table, .compatibility-content a):focus-visible {
+  outline: 2px solid light-dark(#5142c2, #c0b4ff);
+  outline-offset: 4px;
+}
+@media (max-width: 760px) {
+  .site-header {
+    flex-wrap: wrap;
+  }
+  .header-actions {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .guide-sidebar {
+    position: static;
+    max-height: none;
+  }
+  .workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
