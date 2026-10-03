@@ -4,6 +4,8 @@ Experimental source port of Adobe React Aria Components and its Aria/Stately dep
 
 Upstream source: [adobe/react-spectrum at `57c56b8`](https://github.com/adobe/react-spectrum/commit/57c56b8), whose component package declares version 1.21.1. This fork is not an Adobe release.
 
+Read the [Preact compatibility guide](./COMPATIBILITY.md) for import changes, component interfaces, copied styling examples, React-specific features, and known limits. Use [Adobe's documentation](https://react-aria.adobe.com/) for the full component reference.
+
 ## Install in your app
 
 Build and pack the local port:

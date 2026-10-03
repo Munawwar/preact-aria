@@ -4,6 +4,8 @@
 
 WARNING: This is a slopfork of React Aria, it hasn't been tested yet.
 
+[Preact compatibility guide](./preact-port/COMPATIBILITY.md) — setup and differences from [React Aria's documentation](https://react-aria.adobe.com/).
+
 ##  [React Spectrum Libraries](https://react-spectrum.adobe.com/)
 
 A collection of libraries and tools that help you build adaptive, accessible, and robust user experiences.

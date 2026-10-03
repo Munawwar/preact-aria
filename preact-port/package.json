@@ -10,12 +10,14 @@
     "dist/types",
     "LICENSE",
     "README.md",
+    "COMPATIBILITY.md",
     "VERIFICATION.md",
     "verification/results.json",
     "verification/browser-results.json",
     "compat/react.mjs",
     "upstream-patches.json",
-    "example-patches.json"
+    "example-patches.json",
+    "documentation-patches.json"
   ],
   "type": "module",
   "sideEffects": [
