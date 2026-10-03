@@ -1,0 +1,17 @@
+body {
+  padding: 32px;
+  font: 16px / 1.5 system-ui;
+}
+
+._8nuVWa_react-aria-DateInput, ._8nuVWa_react-aria-ListBox {
+  gap: 8px;
+  display: flex;
+}
+
+._8nuVWa_react-aria-ListBox {
+  flex-direction: column;
+}
+
+._8nuVWa_react-aria-DateSegment {
+  padding: 2px;
+}

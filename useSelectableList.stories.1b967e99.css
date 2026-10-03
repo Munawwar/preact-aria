@@ -1,0 +1,9 @@
+.Ap9Jkq_list {
+  cursor: default;
+  border: 1px solid #888;
+  border-radius: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+}
