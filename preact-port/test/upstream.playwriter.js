@@ -150,12 +150,20 @@ switch (state.upstreamBatch || 'priority') {
     await state.step(
       'enter search text',
       () => state.page.getByRole('searchbox', {name: 'Search', exact: true}).fill('Preact'),
-      async () => state.equal(await state.page.getByRole('searchbox').inputValue(), 'Preact')
+      async () =>
+        state.equal(
+          await state.page.getByRole('searchbox', {name: 'Search', exact: true}).inputValue(),
+          'Preact'
+        )
     );
     await state.step(
       'clear search',
       () => state.page.getByRole('button', {name: 'Clear search'}).click(),
-      async () => state.equal(await state.page.getByRole('searchbox').inputValue(), '')
+      async () =>
+        state.equal(
+          await state.page.getByRole('searchbox', {name: 'Search', exact: true}).inputValue(),
+          ''
+        )
     );
     await state.open('textfield');
     await state.step('focus field', () => state.page.getByRole('textbox').click());
@@ -496,10 +504,13 @@ switch (state.upstreamBatch || 'priority') {
     await state.page.getByRole('searchbox', {name: 'Search commands'}).click();
     await state.step(
       'filter commands',
-      () => state.page.getByRole('searchbox').fill('folder'),
+      () =>
+        state.page.getByRole('searchbox', {name: 'Search commands', exact: true}).fill('folder'),
       async () => state.equal(await state.page.getByRole('menuitem').count(), 1)
     );
-    await state.page.getByRole('searchbox').press('ArrowDown');
+    await state.page
+      .getByRole('searchbox', {name: 'Search commands', exact: true})
+      .press('ArrowDown');
     await state.step(
       'Enter chooses command',
       () => state.page.keyboard.press('Enter'),
@@ -741,10 +752,10 @@ switch (state.upstreamBatch || 'priority') {
     await state.step('open emoji picker', () =>
       state.page.getByRole('button', {name: 'Emoji'}).click()
     );
-    await state.page.getByRole('searchbox').click();
+    await state.page.getByRole('searchbox', {name: /^(?!Find examples$)/}).click();
     await state.step(
       'search rocket emojis',
-      () => state.page.getByRole('searchbox').fill('rocket'),
+      () => state.page.getByRole('searchbox', {name: /^(?!Find examples$)/}).fill('rocket'),
       async () => state.equal(await state.page.getByRole('option').count(), 4)
     );
     await state.step(
@@ -791,10 +802,10 @@ switch (state.upstreamBatch || 'priority') {
           .waitFor()
     );
     await state.open('photos');
-    await state.page.getByRole('searchbox').click();
+    await state.page.getByRole('searchbox', {name: /^(?!Find examples$)/}).click();
     await state.step(
       'filter photos to pigeons',
-      () => state.page.getByRole('searchbox').fill('pigeons'),
+      () => state.page.getByRole('searchbox', {name: /^(?!Find examples$)/}).fill('pigeons'),
       async () =>
         state.equal(
           await state.page.getByRole('grid', {name: 'Photos'}).getByRole('row').count(),

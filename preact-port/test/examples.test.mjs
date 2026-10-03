@@ -1,12 +1,10 @@
 import assert from 'node:assert/strict';
-import {execFileSync} from 'node:child_process';
 import {readFile, readdir} from 'node:fs/promises';
 import test from 'node:test';
 
 const root = new URL('../', import.meta.url);
 
 test('the standalone catalog covers every upstream component story and gallery page', async () => {
-  execFileSync(process.execPath, ['scripts/sync-examples.mjs'], {cwd: root});
   const inventory = JSON.parse(
     await readFile(new URL('examples/generated/inventory.json', root), 'utf8')
   );

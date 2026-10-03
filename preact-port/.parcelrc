@@ -1,5 +1,21 @@
 {
   "extends": "@parcel/config-default",
-  "resolvers": ["@parcel/resolver-glob", "..."],
-  "transformers": {"*.{js,mjs,jsx,ts,tsx}": ["@parcel/transformer-js"]}
+  "resolvers": [
+    "@parcel/resolver-glob",
+    "..."
+  ],
+  "transformers": {
+    "illustration:*.svg": [
+      "../packages/dev/parcel-transformer-s2-icon/IconTransformer.js"
+    ],
+    "examples/generated/repository/packages/@react-spectrum/s2/s2wf-icons/**/*.svg": [
+      "../packages/dev/parcel-transformer-s2-icon/IconTransformer.js"
+    ],
+    "*.svg": [
+      "@parcel/transformer-svg-react"
+    ],
+    "*.{js,mjs,jsx,ts,tsx}": [
+      "@parcel/transformer-js"
+    ]
+  }
 }

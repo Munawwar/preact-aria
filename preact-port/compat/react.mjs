@@ -20,6 +20,7 @@ export const {
   Component,
   PureComponent,
   Suspense,
+  startTransition,
   useCallback,
   useContext,
   useEffect,

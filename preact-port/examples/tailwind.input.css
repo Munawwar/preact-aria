@@ -3,5 +3,7 @@
 @import 'tailwindcss/utilities.css' layer(utilities) source(none);
 @source './generated/tailwind/src';
 @source './generated/gallery';
+@source './generated/documentation';
+@source './generated/repository/starters/tailwind';
 @plugin 'tailwindcss-react-aria-components';
 @import 'tw-animate-css';

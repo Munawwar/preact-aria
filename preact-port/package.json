@@ -36,7 +36,7 @@
     "types": "node scripts/declarations.mjs --clean && tsc -p tsconfig.json && node scripts/declarations.mjs",
     "format": "oxfmt --config ../.oxfmtrc.json scripts examples diagnostics test compat",
     "lint": "oxlint --config .oxlintrc.json scripts examples diagnostics test compat",
-    "test": "node --test test/*.test.mjs",
+    "test": "node scripts/sync-examples.mjs && node --test test/*.test.mjs",
     "build:examples": "npm run build && npm run sync:examples && node scripts/ssr-page.mjs && parcel build --target app --no-cache --no-scope-hoist --no-optimize --no-autoinstall",
     "test:types": "tsc -p test/tsconfig.json && tsc -p test/tsconfig.nodenext.json",
     "check:upstream": "node scripts/check-upstream.mjs",
@@ -56,8 +56,11 @@
   "devDependencies": {
     "@internationalized/string-compiler": "3.4.1",
     "@parcel/resolver-glob": "^2.16.0",
+    "@parcel/transformer-inline-string": "^2.16.4",
+    "@parcel/transformer-svg-react": "^2.16.3",
     "@tailwindcss/cli": "4.3.3",
     "emojibase-data": "17.0.0",
+    "json5": "^2.2.3",
     "lucide-react": "0.517.0",
     "motion": "12.23.6",
     "oxfmt": "latest",
@@ -80,6 +83,26 @@
   },
   "@parcel/resolver-default": {
     "packageExports": true
+  },
+  "@parcel/transformer-css": {
+    "cssModules": {
+      "global": true,
+      "pattern": "[content-hash]_[local]",
+      "exclude": [
+        "examples/shell.css",
+        "examples/generated/vanilla/**",
+        "examples/generated/tailwind/**",
+        "examples/generated/hooks/**",
+        "examples/generated/gallery/**",
+        "examples/generated/documentation/**",
+        "examples/generated/repository/starters/**",
+        "examples/generated/repository/packages/dev/s2-docs/**",
+        "examples/generated/tailwind.css",
+        "examples/generated/repository/packages/@react-aria/example-theme/**",
+        "examples/generated/repository/**/*.global.css",
+        "examples/generated/repository/packages/@react-spectrum/s2/**/*.{js,ts,tsx}"
+      ]
+    }
   },
   "alias": {
     "react": "./compat/react.mjs",

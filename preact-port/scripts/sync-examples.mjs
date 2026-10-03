@@ -2,6 +2,7 @@ import {cp, mkdir, readFile, readdir, rm, writeFile} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import ts from 'typescript';
+import {expandExamples} from './expand-examples.mjs';
 
 const port = fileURLToPath(new URL('../', import.meta.url));
 const repo = path.dirname(port);
@@ -23,9 +24,10 @@ function adapt(source, destination) {
   return source.replace(/(from\s+|import\s*)(['"])([^'"]+)\2/g, (match, prefix, quote, name) => {
     let target;
     if (name === 'react-aria') {
-      target = path.join(port, 'examples/aria-hooks.ts');
-    } else if (/^react-aria-components(?:\/|$)/.test(name) || name === 'react-stately') {
-      target = path.join(port, 'dist/index.js');
+      target = path.join(port, 'vendor/react-aria/exports/index.ts');
+    } else if (/^(react-aria-components|react-aria|react-stately)(?:\/|$)/.test(name)) {
+      const [pkg, ...rest] = name.split('/');
+      target = path.join(port, 'vendor', pkg, 'exports', (rest.join('/') || 'index') + '.ts');
     } else if (name.startsWith('vanilla-starter/')) {
       target = path.join(output, 'vanilla/src', name.slice('vanilla-starter/'.length));
     } else if (name.startsWith('tailwind-starter/')) {
@@ -132,6 +134,7 @@ for (const name of (await readdir(path.join(repo, gallerySource)))
     stories: ['Example']
   });
 }
+await expandExamples({port, repo, output, entries});
 const registry = entries
   .map(
     ({module, ...entry}) =>
@@ -144,5 +147,5 @@ await writeFile(
 );
 await writeFile(path.join(output, 'inventory.json'), JSON.stringify(entries, null, 2) + '\n');
 console.log(
-  `Synced ${stories.length} component pages (${entries.filter(e => e.group === 'Components').reduce((n, e) => n + e.stories.length, 0)} stories) and ${entries.filter(e => e.group === 'Gallery').length} gallery examples from upstream.`
+  `Synced ${entries.length} pages / ${entries.reduce((n, e) => n + e.stories.length, 0)} upstream variants: ${[...new Set(entries.map(e => e.group))].map(group => group + ' ' + entries.filter(e => e.group === group).reduce((n, e) => n + e.stories.length, 0)).join(', ')}.`
 );

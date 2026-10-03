@@ -261,3 +261,110 @@ body {
     padding: 20px;
   }
 }
+
+.catalog-filter,
+.variant-picker {
+  display: grid;
+  gap: 6px;
+  padding: 8px;
+  font-weight: 600;
+}
+.catalog-filter input,
+.variant-picker select,
+.example-controls input,
+.example-controls select {
+  font: inherit;
+  color: inherit;
+  background: light-dark(white, #26232e);
+  border: 1px solid light-dark(#ccc9da, #625c73);
+  border-radius: 6px;
+  padding: 6px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.variant-picker {
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+.site-sidebar summary {
+  cursor: pointer;
+  padding: 12px;
+  font-weight: 600;
+}
+.site-sidebar nav h2 {
+  display: none;
+}
+.component-example {
+  display: block;
+}
+.example-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 170px;
+}
+.example-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 12px;
+  border: 1px solid light-dark(#dedee5, #625c73);
+  border-radius: 8px;
+  margin: 0 0 24px;
+  padding: 12px;
+}
+.example-controls label {
+  display: grid;
+  gap: 4px;
+  font-size: 12px;
+}
+.example-controls button {
+  font: inherit;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.original-code {
+  margin-top: 24px;
+}
+.original-code pre {
+  max-height: 480px;
+  overflow: auto;
+  padding: 16px;
+  background: light-dark(#eeeef2, #242429);
+  border-radius: 8px;
+  font-size: 12px;
+}
+.preview-environment {
+  margin-block: 12px;
+  padding: 12px;
+  border: 1px solid light-dark(#dedee8, #444450);
+  border-radius: 8px;
+}
+.preview-environment form {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 12px;
+}
+.preview-environment label {
+  display: grid;
+  gap: 4px;
+}
+.preview-environment input,
+.preview-environment select {
+  font: inherit;
+  padding: 6px;
+  border-radius: 4px;
+}
+.example-controls textarea {
+  font: inherit;
+  max-width: 240px;
+  min-height: 55px;
+  border-radius: 4px;
+  padding: 6px;
+}
+.example-controls [aria-invalid='true'] {
+  outline: 2px solid #d63854;
+}

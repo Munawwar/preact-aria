@@ -1,0 +1,20 @@
+[
+  {
+    "source": "packages/dev/s2-docs/pages/react-aria/forms.mdx",
+    "reason": "Preact 11 does not implement React 19 useActionState or function-valued native form actions. Preserve the same validation action using native submit and local state.",
+    "before": "import {useActionState} from 'react';",
+    "after": "import {useState} from 'react';"
+  },
+  {
+    "source": "packages/dev/s2-docs/pages/react-aria/forms.mdx",
+    "reason": "Submit the original action with native FormData and retain its returned validation errors.",
+    "before": "let [{values, errors}, formAction] = useActionState<{values?: Record<string, string>, errors?: Record<string, string>}, FormData>(action, {});",
+    "after": "let [{values, errors}, setResult] = useState<{values?: Record<string, string>, errors?: Record<string, string>}>({});\n  let formAction = event => {\n    event.preventDefault();\n    setResult(action({values, errors}, new FormData(event.currentTarget)));\n  };"
+  },
+  {
+    "source": "packages/dev/s2-docs/pages/react-aria/forms.mdx",
+    "reason": "Native form submit replaces the unsupported React function-valued action.",
+    "before": "action={formAction}",
+    "after": "onSubmit={formAction}"
+  }
+]

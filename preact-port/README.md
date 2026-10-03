@@ -30,22 +30,41 @@ React aliases are unnecessary. Components retain the original API and are unstyl
 
 ## Run the isolated pages
 
+Install the root workspace dependencies once for the upstream examples' build tools and helpers:
+
 ```sh
+# From the repository root:
+node .yarn/releases/yarn-4.18.0.cjs install --immutable --mode=skip-build
+npm ci --prefix preact-port --workspaces=false
+cd preact-port
 npm run build:examples
 python3 -m http.server 4100 --directory artifacts/site
 ```
 
-Open `http://localhost:4100/?example=menu`. The sidebar includes 49 upstream Vanilla CSS component pages (54 story variants) and all 8 rich gallery examples. `http://localhost:4100/utilities.html` and `http://localhost:4100/hydration.html` remain separate diagnostic pages. `npm start` provides a Parcel development server.
+Open `http://localhost:4100/?example=menu`. The existing shell now contains **347 pages / 1,026 upstream variants**. Search the sidebar, choose a group, then choose a use case. The first keyboard stop is **Skip to example**: press Tab and Enter to bypass the sidebar. `npm start` runs the Parcel development server. Hydration and utility diagnostics remain at `/hydration.html` and `/utilities.html`.
 
-## Upstream component examples and gallery
+## Upstream examples and use cases
 
-The build reads the unchanged sources in `starters/docs/src`, `starters/docs/stories`, `starters/tailwind/src`, and `packages/dev/s2-docs/pages/react-aria/examples`. `npm run sync:examples` regenerates the ignored `examples/generated` directory and compiles the gallery's Tailwind utilities. Change the original upstream files deliberately when adopting future updates; do not edit generated copies.
+| Group | Pages | Variants | Original source |
+| --- | ---: | ---: | --- |
+| Components | 49 | 54 | Vanilla CSS starter stories |
+| Documentation | 131 | 490 | React Aria MDX render blocks and VisualExample instances, including hooks, guides, releases and blog examples |
+| Storybook | 48 | 239 | React Aria Components stories |
+| Hook stories | 29 | 123 | React Aria hook stories |
+| State stories | 1 | 1 | React Stately stories |
+| Tailwind | 48 | 78 | Tailwind starter stories |
+| Hooks | 33 | 33 | Hooks starter stories |
+| Gallery | 8 | 8 | React Aria's rich examples gallery |
 
-The component stories retain Adobe's props, markup, styles, and story arguments. Gallery code is extracted from the original MDX render blocks or uses its adjacent application modules. The standalone adapter changes module paths so Components imports resolve to our built `dist/index.js`, maps the two starter namespaces, wraps top-level JSX in a component, and replaces Storybook's action spy with a console recorder. The CRUD app's additional `useCollator` hook compiles unchanged Aria source. Motion and Lucide use the shared Preact compatibility alias. The CommandPalette story also resolves its omitted shortcut callback from the surrounding DialogTrigger context. The CRUD form replaces React 19's function-valued `action` with native `onSubmit`; the exact, guarded replacement is recorded in [example-patches.json](./example-patches.json). Adobe's source files remain unchanged. Browser checks are listed in [VERIFICATION.md](./VERIFICATION.md).
+The build reads the original upstream files. `npm run sync:examples` regenerates ignored copies under `examples/generated`, expands component switchers, imports referenced helpers/assets, and builds Tailwind utilities. Original story bodies and styles are retained, along with arguments and decorators. Documentation variants expose their original code and a link to the exact upstream source line. Prop controls use the library's declared enum, boolean, number and object types; JSON controls apply on blur. Virtualizer controls preserve the original nested `layoutOptions` object. Story previews provide locale, theme and scale settings using upstream Spectrum's Provider and themes.
 
-Open `http://localhost:4100/?example=gallery` for the gallery. Pages with multiple upstream stories offer links to the original variants. The first keyboard stop is **Skip to example**: press Tab, then Enter to focus the main example, bypassing the sidebar.
+The adapter changes module paths, wraps top-level JSX, and records Storybook actions in the console. All Aria/Components/Stately imports share one canonical copy of the ported source, avoiding duplicate contexts between component and hook examples. The packaged distribution is checked separately through strict consumer, SSR and hydration tests. Adobe's CSS processors and icon transformer are reused for stories that depend on Spectrum helpers.
 
-The previous custom Basic/Showcase catalog is preserved in the GitHub tag [`backup/custom-examples-2026-10-02`](https://github.com/Munawwar/preact-aria/tree/backup/custom-examples-2026-10-02). The historical 53-page verification report refers to those archived fixtures. To inspect them, create a separate worktree at that tag; the current site uses Adobe's examples.
+Small semantic exceptions are recorded with exact source guards: [example-patches.json](./example-patches.json) covers the gallery's native form submission and shortcut context; [documentation-patches.json](./documentation-patches.json) adapts React 19's `useActionState` form example to native `onSubmit` and local state, retaining its original validation action. Upstream source files remain unchanged. Tests compare every imported story body with the original after normalizing module paths, and check the full documentation inventory.
+
+This is a static fixture browser, not the Storybook manager or Adobe docs application. Storybook add-on panels, its React StrictMode switch, and documentation infrastructure are not included. Async examples retain their original external services; successful initial rendering does not verify those services, every prop combination, or every interaction. See [VERIFICATION.md](./VERIFICATION.md) for actual browser results and limits.
+
+Open `http://localhost:4100/?example=gallery` for the gallery. The previous custom Basic/Showcase catalog remains in the tag [`backup/custom-examples-2026-10-02`](https://github.com/Munawwar/preact-aria/tree/backup/custom-examples-2026-10-02). Its historical report describes the archived fixtures.
 
 ## Publish the examples to GitHub Pages
 
